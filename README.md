@@ -36,11 +36,11 @@ Mais capturas de tela disponíveis em  (https://github.com/jpbp/Projeto_Engenhar
 ## Regras e Padrões
 Esse topico é sobre definir regras e padrões de uso do Git para facilitar o trabalho colaborativo e aprimorar documentação, 
 
-1 - Os commits devem ser intuitivos e resumidos.
-2 - Não deve contém ambuiguidade nos commits.
-3 - Na pasta de requisitos estará somente a parte da documentação do projeto
-4 - Na pasta src ficara a parte da codificação do projeto.
-5 - Caso for fazer alguma manutenção criar uma nova branch
+- [Os commits devem ser intuitivos e resumidos]
+- [Não deve contém ambuiguidade nos commits]
+- [Na pasta de requisitos estará somente a parte da documentação do projeto]
+- [Na pasta src ficara a parte da codificação do projeto.]
+- [Caso for fazer alguma manutenção criar uma nova branch]
 
 ## Créditos
 
