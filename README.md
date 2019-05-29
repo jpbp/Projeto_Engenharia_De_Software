@@ -25,12 +25,12 @@ Confira [sobre a página na documentação do Software] (https://github.com/jpbp
 
 - Exibição de lista na foto acima.
 - Criar / atualizar visualização:
-![Mapa de navegação do site](https://github.com/jpbp/Projeto_Engenharia_De_Software/blob/master/Prot%C3%B3tipo%20de%20interfaces/MapaNavega%C3%A7ao/Mapa%20Funcion%C3%A1rio.PNG)
+- [Mapa de navegação do site]
+![nav](https://github.com/jpbp/Projeto_Engenharia_De_Software/blob/master/Prot%C3%B3tipo%20de%20interfaces/MapaNavega%C3%A7ao/Mapa%20Funcion%C3%A1rio.PNG)
+- [Interface do sistema tela de login]
+![pagina](https://github.com/jpbp/Projeto_Engenharia_De_Software/blob/master/Prot%C3%B3tipo%20de%20interfaces/Tela%20Principal%20-%20Alvo.png)
 
-![Interface do sistema tela de login](https://github.com/jpbp/Projeto_Engenharia_De_Software/blob/master/Prot%C3%B3tipo%20de%20interfaces/Tela%20Principal%20-%20Alvo.png)
-
-Mais capturas de tela disponíveis em (https://github.com/jpbp/Projeto_Engenharia_De_Software/tree/master/Prot%C3
-%B3tipo%20de%20interfaces).
+Mais capturas de tela disponíveis em (https://github.com/jpbp/Projeto_Engenharia_De_Software/tree/master/Prot%C3%B3tipo%20de%20interfaces).
 
 
 ## Regras e Padrões
