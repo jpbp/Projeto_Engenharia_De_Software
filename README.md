@@ -30,7 +30,7 @@ Confira [sobre a página na documentação do Software] (https://github.com/jpbp
 - [Interface do sistema tela de login]
 ![pagina](https://github.com/jpbp/Projeto_Engenharia_De_Software/blob/master/Prot%C3%B3tipo%20de%20interfaces/Tela%20Principal%20-%20Alvo.png)
 
-Mais capturas de tela disponíveis em (https://github.com/jpbp/Projeto_Engenharia_De_Software/tree/master/Prot%C3%B3tipo%20de%20interfaces).
+- [Mais capturas de tela disponíveis em (https://github.com/jpbp/Projeto_Engenharia_De_Software/tree/master/Prot%C3%B3tipo%20de%20interfaces).]
 
 
 ## Regras e Padrões
