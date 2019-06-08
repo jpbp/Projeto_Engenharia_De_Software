@@ -1,7 +1,6 @@
 <?php
 	session_start(); // pega a seção para poder verificar se o usuario não esta autenticado
 	include("verificalogin.php");
-	include("verificaCadastro.php")
 ?>
 <!DOCTYPE html>
 	<html>
