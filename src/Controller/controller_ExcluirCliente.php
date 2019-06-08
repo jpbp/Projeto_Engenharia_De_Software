@@ -11,7 +11,7 @@ echo $nome;
 $c1= new Cliente("",$cpf,"","","","","","","","","","");
 
 //conexao com banco de dados
-$con = new Conection("localhost","root","123","lojahogwarts");
+$con = new Conection("localhost","root","","lojahogwarts");
 $con->conectar();
 
 	

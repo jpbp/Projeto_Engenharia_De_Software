@@ -19,7 +19,7 @@ $estado = $_POST["estado"];
 echo $cpf;
 $c1= new Cliente($nome,$cpf,$residencial,$celular,$email,$cep,$logradouro,$bairro,$cidade,$complemento,$numero,$estado);
 
-$con = new Conection("localhost","root","123","lojahogwarts");
+$con = new Conection("localhost","root","","lojahogwarts");
 $con->conectar();
 
 $cDAO = new ClienteDao();

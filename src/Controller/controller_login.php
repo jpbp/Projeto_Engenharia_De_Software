@@ -3,7 +3,7 @@ session_start();
 include_once("../Persistence/Conection.php");
 
 //conexao com o banco
-$con = new Conection("localhost","root","123","lojahogwarts");
+$con = new Conection("localhost","root","","lojahogwarts");
 $con->conectar();
 
 

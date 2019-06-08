@@ -11,7 +11,7 @@ $nome = $_POST["nome"];
 $c1= new Cliente($nome,"","","","","","","","","","","");
 
 //conexao com banco de dados
-$con = new Conection("localhost","root","123","lojahogwarts");
+$con = new Conection("localhost","root","","lojahogwarts");
 $con->conectar();
 
 $cDAO = new ClienteDao();

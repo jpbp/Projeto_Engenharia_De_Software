@@ -22,7 +22,7 @@ $c1= new Cliente($nome,$cpf,$residencial,$celular,$email,$cep,$logradouro,$bairr
 
 
 //conexao com banco de dados
-$con = new Conection("localhost","root","123","lojahogwarts");
+$con = new Conection("localhost","root","","lojahogwarts");
 $con->conectar();
 
 
