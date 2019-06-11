@@ -20,6 +20,17 @@
 	<h1 align="center">Bem vindo a loja Hogwarts</h1>
 	<a href="CadastrarCliente.php">Cadastrar cliente</a><br>
 	<a href="BuscarCliente.php">Buscar Cliente</a>
+	<?php 
+		if(!empty($_SESSION['cadastrou'])){
+			if($_SESSION['cadastrou']){
+				echo "<script>alert('Cadastrado com sucesso!!');</script>";
+			}
+			else{
+				echo "<script>alert('Cadastrado com sucesso!!');</script>";
+			}
+			unset($_SESSION['cadastrou']);
+		}
+	?>
 </body>
 </html>
 
