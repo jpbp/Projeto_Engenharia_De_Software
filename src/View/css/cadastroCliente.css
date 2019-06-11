@@ -1,0 +1,15 @@
+.Titulo {
+    margin: 30px;
+    color: darkgreen;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main {
+    border: 3px solid #C2CCCA;
+    margin: 60px;
+    padding: 30PX;
+}
+
+#botao {
+    left: 90%;
+}
