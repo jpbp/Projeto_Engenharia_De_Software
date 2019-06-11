@@ -27,15 +27,14 @@ $con->conectar();
 
 
 $clienteDAO = new ClienteDao();
-if($clienteDAO->cadastrar($c1,$con->getLink())){
-    $_SESSION['cadastro']="<script>alert('Cliente Cadastrado com sucesso!');</script>";
-  	header('Location: ../View/CadastrarCliente.php');
-    exit();
+if($clienteDAO->cadastrarCliente($c1,$con->getLink()) ){
+    $_SESSION['cadastrou']=true;
+    header('Location: ../View/index.php');
+    exit();    
 }
 else{
-	$_SESSION['cadastro']="<script>alert('Não foi possivel cadastrar o cliente');</script>";
-  	header('Location: ../View/CadastrarCliente.php');
-    exit();
-	
+    $_SESSION['cadastrou']=false;
+    header('Location: ../View/index.php');
+    exit(); 
 }
 ?>
