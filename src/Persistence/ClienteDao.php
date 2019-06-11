@@ -5,7 +5,7 @@ class ClienteDao{
 
 	}
 
-	 function cadastrar($Cliente,$link){
+	 function cadastrarCliente($Cliente,$link){
 			 $query = "INSERT INTO `Clientes` (`nome`, `cpf`, `residencial`, `celular`, `email`, `cep`, `logradouro`, `bairro`, `cidade`, `complemento`, `numero`, `estado`) VALUES 
 			(".$Cliente->getAtributos().");";
 			
