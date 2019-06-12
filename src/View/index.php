@@ -82,8 +82,8 @@
                     </li>
                     <ul class="sub-menu collapse" id="produtos">
                         <!-- Submenu -->
-                        <li id="CadastrarProduto" onclick="CadastrarProduto()" class="button"><a>Cadastrar </a></li>
-                        <li id="BuscarProduto" onclick="BuscarProduto()" class="button"><a>Buscar </a></li>
+                        <li id="CadastrarProduto" onclick="CadastrarProduto()" class="button"><a> <i class="fas fa-angle-right"></i>Cadastrar </a></li>
+                        <li id="BuscarProduto" onclick="BuscarProduto()" class="button"><a> <i class="fas fa-angle-right"></i>Buscar </a></li>
 
                     </ul>
 
@@ -93,8 +93,8 @@
                     </li>
                     <ul class="sub-menu collapse" id="pedidos">
                         <!-- Submenu -->
-                        <li id="CadastrarPedido" onclick="CadastrarPedido()" class="button"><a>Cadastrar </a></li>
-                        <li id="BuscarPedido" onclick="BuscarPedido()" class="button"><a>Buscar </a></li>
+                        <li id="CadastrarPedido" onclick="CadastrarPedido()" class="button"><a> <i class="fas fa-angle-right"></i>Cadastrar </a></li>
+                        <li id="BuscarPedido" onclick="BuscarPedido()" class="button"><a> <i class="fas fa-angle-right"></i>Buscar </a></li>
 
                     </ul>
 
@@ -110,7 +110,7 @@
     </div>
     <!-- Barra do topo  -->
     <div class="col" style="padding-left: 0 !important">
-        <div>
+        <div id="username">
             <nav class="navbar navbar-light bg-light">
                 <span class="navbar-brand mb-0 h1"></span>
                 <div id="login">
