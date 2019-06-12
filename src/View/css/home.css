@@ -1,4 +1,14 @@
-body {
+body,
+html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.centered {
+    height: 100%;
     margin: auto;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
