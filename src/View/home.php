@@ -16,14 +16,13 @@
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link rel="stylesheet" href="cadastroCliente.css">
+    <link rel="stylesheet" href="css/home.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/63cd9f4730.js"></script>
 </head>
 
 <body>
-    <div class="container">
-
+    <div class="centered">
         <img src="imagens/fotoFundo.png" alt="Hogwarts" height="300px">
     </div>
 </body>
