@@ -169,6 +169,14 @@
             </div>
         </div>
     </main>
+    <?php
+    if(!empty($_SESSION["cadastrou"])){
+        if($_SESSION["cadastrou"]){
+            echo "<script>alert('Cadastro realizado com sucesso !');</script>";
+            unset($_SESSION["cadastrou"]);
+        }
+    }
+    ?>
 </body>
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
