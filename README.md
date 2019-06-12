@@ -42,6 +42,12 @@ Esse topico é sobre definir regras e padrões de uso do Git para facilitar o tr
 - [Na pasta src ficara a parte da codificação do projeto.]
 - [Caso for fazer alguma manutenção criar uma nova branch]
 
+## Padrões de Comentários
+- [Comentários claros]
+- [Não deve conter ambiguidade]
+- [Não ensine a programar com comentários]
+- [Trecho de código complexo, mas tem uma razão de ser]
+
 ## Créditos
 
 - [gabrielleacuba] (https://github.com/gabrielleacuba) - designer, melhoria na interface, e na documentação e no crud
