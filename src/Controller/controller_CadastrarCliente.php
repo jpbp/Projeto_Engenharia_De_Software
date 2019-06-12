@@ -29,12 +29,12 @@ $con->conectar();
 $clienteDAO = new ClienteDao();
 if($clienteDAO->cadastrarCliente($c1,$con->getLink()) ){
     $_SESSION['cadastrou']=true;
-    header('Location: ../View/index.php');
+    header('Location: ../View/CadastrarCliente.php');
     exit();    
 }
 else{
     $_SESSION['cadastrou']=false;
-    header('Location: ../View/index.php');
+    header('Location: ../View/CadastrarCliente.php');
     exit(); 
 }
 ?>
