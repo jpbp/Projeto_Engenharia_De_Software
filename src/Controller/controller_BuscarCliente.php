@@ -28,26 +28,31 @@ if( mysqli_num_rows($tabela) == 0 ){
     exit();
 }
 else{
-	$openTable="<table style=\"width:100%\" border=\"1\">
+	$openTable="<table class='table table-hover'>
+	<thead>
 		<tr>
 			<th>Nome</th>
 			<th>CPF</th> 
 			<th>Celular</th>
 			<th>excluir</th>
 			<th>alterar</th>
-		</tr>";
+		</tr>
+		</thead>";
 
 	$bodyTable = "" ;
 	
 
 	while($row = mysqli_fetch_row($tabela)){
-			$bodyTable = $bodyTable."<tr>
+			$bodyTable = $bodyTable."
+			<tbody>
+			<tr>
 				<td>".$row[0]."</td>
 				<td>".$row[1]."</td> 
 				<td>".$row[3]."</td>
 				<td> <a href="."../Controller/controller_ExcluirCliente.php?codigo=".$row[1].""."> <button > remover </button><a/> </td>
 				<td><a href="."../View/AlterarCliente.php?codigo=".$row[1].""."> <button > alterar </button><a/>   </td>
-			</tr>";
+			</tr>
+			</tbody>";
 			
 		}
 	$closeTable ="</table>";
@@ -58,6 +63,7 @@ else{
 			<header>
 			<meta charset=\"utf-8\">
 			<title> Titulo </title>
+			<link href='../View/Bootstrap/css/bootstrap.min.css' rel='stylesheet'>
 			</header>
 
 			<body>".$openTable.$bodyTable.$closeTable.
