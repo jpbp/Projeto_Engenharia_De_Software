@@ -25,40 +25,42 @@
 </head>
 
 <body>
-    <form action="../Controller/controller_login.php" method="POST">
-
-        <div class="login container" id="layoutLogin">
-            <img src="imagens/hogwarts.png" alt="hogwarts">
-            
-            
-            <!-- Username -->
-            <div class="col-md-11 mb-3">
-                <label for="validationDefaultUsername">Username</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroupPrepend2"><i class="far fa-user"></i></span>
+    <div class="centered">
+        <form action="../Controller/controller_login.php" method="POST">
+    
+            <div class="login container" id="layoutLogin">
+                <img src="imagens/hogwarts.png" alt="hogwarts">
+                
+                
+                <!-- Username -->
+                <div class="col-md-11 mb-3">
+                    <label for="validationDefaultUsername">Username</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrepend2"><i class="far fa-user"></i></span>
+                        </div>
+                        <input name="usuario" type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
                     </div>
-                    <input name="usuario" type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
                 </div>
-            </div>
-
-            <!-- Password -->
-            <div class="col-md-11 mb-3">
-                <label for="inputPassword6">Password</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroupPrepend2"><i class="fas fa-key"></i></span>
+    
+                <!-- Password -->
+                <div class="col-md-11 mb-3">
+                    <label for="inputPassword6">Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrepend2"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input name="senha" type="password" id="inputPassword6" class="form-control" placeholder="Password" aria-describedby="passwordHelpInline" required>
                     </div>
-                    <input name="senha" type="password" id="inputPassword6" class="form-control" placeholder="Password" aria-describedby="passwordHelpInline" required>
+                </div>
+                <div class="form-row">
+                    <div id="botao" class="col-sm-8">
+                        <button type="submit" class="btn btn-success">Entrar</button>
+                    </div>
                 </div>
             </div>
-            <div class="form-row">
-                <div id="botao" class="col-sm-8">
-                    <button type="submit" class="btn btn-success">Entrar</button>
-                </div>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </body>
 
 </html>
