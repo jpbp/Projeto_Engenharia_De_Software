@@ -26,7 +26,7 @@ form {
     background: #D3D3D3;
     padding: 20px;
     width: 400px;
-    height: 350px;
+    height: 430px;
     top: 50%;
     left: 50%;
     transform: translate(-50, -50);
@@ -34,4 +34,8 @@ form {
 
 #botao {
     left: 75%;
+}
+
+#espacamento{
+    padding: 3%;
 }

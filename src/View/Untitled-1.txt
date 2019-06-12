@@ -3,8 +3,8 @@
             <?php
             if(isset($_SESSION['nao_autenticado'])): // verifica se o usuario não esta autenticado e aparece a msg
             ?>
-            <div class="notification is-danger">
-                <p>ERRO: Usuário ou senha inválidos.</p>
+            <div class="alert alert-danger" role="alert">
+                Usuario ou senha invalido
             </div>
             <?php
                 endif;
