@@ -17,17 +17,19 @@
 		    <button class="button" type="submit" name="Buscar">Buscar</button><br>
 		</form>	
 	<?php
-		if(empty($_SESSION['busca'])){
-			
-		}
-		else if($_SESSION['busca']=='nada'){
-			echo "nenhum usuario encontrado";
-		}
-		else
-		{
+		if(!empty($_SESSION['busca'])){
+
+			if($_SESSION['busca']=='nada'){
+				echo "nenhum usuario encontrado";
+			}
+			else{
+
 			echo $_SESSION['busca'];
 			unset($_SESSION['busca']);
+			}
 		}
+	
+	
 	?>	
 	<?php
 	if(!empty($_SESSION['excluiu'])){
