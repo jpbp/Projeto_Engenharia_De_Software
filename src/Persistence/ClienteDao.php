@@ -4,6 +4,12 @@ class ClienteDao{
 	public function ClienteDao(){
 
 	}
+	function buscarClienteFormulario($cliente,$link){
+		$query = "SELECT * FROM `Clientes`  WHERE cpf = '".$cliente->getCpf()."'";
+		$r = mysqli_query($link, $query);
+		return $r;
+
+	}
 
 	 function cadastrarCliente($Cliente,$link){
 			 $query = "INSERT INTO `Clientes` (`nome`, `cpf`, `residencial`, `celular`, `email`, `cep`, `logradouro`, `bairro`, `cidade`, `complemento`, `numero`, `estado`) VALUES 
