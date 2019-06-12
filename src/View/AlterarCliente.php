@@ -3,6 +3,8 @@ session_start();
 $cpf = $_GET["codigo"];
 
 $_SESSION['cpf']=$cpf;
+
+
 ?>
 <!DOCTYPE html>
 <html>
