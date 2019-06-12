@@ -1,9 +1,37 @@
 <?php
 session_start();
+include("../Model/Cliente.php");
+include("../Persistence/Conection.php");
+include("../Persistence/ClienteDao.php");
 $cpf = $_GET["codigo"];
 
 $_SESSION['cpf']=$cpf;
 
+$c1= new Cliente("",$cpf,"","","","","","","","","","");
+
+//conexao com banco de dados
+$con = new Conection("localhost","root","","lojahogwarts");
+$con->conectar();
+
+$cDAO = new ClienteDao();
+
+$aux = $cDAO->buscarClienteFormulario($c1,$con->getLink());
+while($row = mysqli_fetch_row($aux))
+{
+    $nome = "'".$row[0]."'";
+    $cpfaux =  "'".$row[1]."'";  
+    $residencial =  "'".$row[2]."'";
+    $celular =  "'".$row[3]."'";
+    $email =  "'".$row[4]."'";
+    $cep =  "'".$row[5]."'";
+    $logradouro =  "'".$row[6]."'";
+    $bairro =  "'".$row[7]."'";
+    $cidade =  "'".$row[8]."'";
+    $complemento = "'".$row[9]."'";
+    $numero = "'".$row[10]."'";
+    $estado =  "'".$row[11]."'";
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -44,7 +72,7 @@ $_SESSION['cpf']=$cpf;
                         <div class="form-group col-sm-12">
 
                             <label for="inputNome">Nome</label>
-                            <input type="text" name="nome" class="form-control" id="inputNome" placeholder="Nome" required>
+                            <input type="text"  name="nome" class="form-control" id="inputNome" value= <?php echo $nome ?>   required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -53,7 +81,7 @@ $_SESSION['cpf']=$cpf;
                     <div class="form-row">
                         <div class="form-group col-sm-4">
                             <label for="inputCpf"> CPF </label>
-                            <input type="number" class="form-control" name="cpf" id="inputCpf" placeholder="CPF"  disabled>
+                            <input type="number" class="form-control" name="cpf" id="inputCpf" value= <?php echo $cpfaux ?>   disabled>
                             <div class="invalid-feedback">
                                 Por Favor insira um CPF válido.
                             </div>
@@ -61,14 +89,14 @@ $_SESSION['cpf']=$cpf;
 
                         <div class="form-group col-sm-4">
                             <label for="inputResidencial"> Residencial </label>
-                            <input type="number" class="form-control" name="residencial" id="inputResidencial" placeholder="Residencial" required>
+                            <input type="number" class="form-control" name="residencial" id="inputResidencial" value= <?php echo $residencial ?>  required>
                             <div class="invalid-feedback">
                                 Por Favor insira um telefone válido.
                             </div>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="inputCelular"> Celular </label>
-                            <input type="number" class="form-control" id="inputCelular" name="celular" placeholder="Celular" required>
+                            <input type="number" class="form-control" id="inputCelular" name="celular" value= <?php echo $celular ?>  required>
                             <div class="invalid-feedback">
                                 Por Favor insira um celular válido.
                             </div>
@@ -77,7 +105,7 @@ $_SESSION['cpf']=$cpf;
                     <div class="form-row">
                         <div class="form-group col-sm-12">
                             <label for="inputEmail"> Email </label>
-                            <input type="text" class="form-control" id="inputEmail"  name="email" placeholder="Email" required>
+                            <input type="text" class="form-control" id="inputEmail"  name="email" value= <?php echo $email ?>  required>
                             <div class="invalid-feedback">
                                 Por Favor insira um email válido.
                             </div>
@@ -86,7 +114,7 @@ $_SESSION['cpf']=$cpf;
                     <div class="form-row">
                         <div class="form-group col-sm-4">
                             <label for="inputCep"> CEP </label>
-                            <input type="number" class="form-control" name="cep" id="inputCep" placeholder="CEP" required>
+                            <input type="number" class="form-control" name="cep" id="inputCep" value= <?php echo $cep ?>  required>
                             <div class="invalid-feedback">
                                 Por Favor insira um cep válido.
                             </div>
@@ -95,14 +123,14 @@ $_SESSION['cpf']=$cpf;
                     <div class="form-row">
                         <div class="form-group col-sm-8">
                             <label for="inputEndereco"> Endereço </label>
-                            <input type="text" name="logradouro" class="form-control" id="inputEndereco" placeholder="Endereço" required>
+                            <input type="text" name="logradouro" class="form-control" id="inputEndereco" value= <?php echo $logradouro ?>  required>
                             <div class="invalid-feedback">
                                 Por Favor insira um enderecço válido.
                             </div>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="inputNumero"> Número </label>
-                            <input type="text" name="numero" class="form-control" id="inputNumero" placeholder="Número" required>
+                            <input type="text" name="numero" class="form-control" id="inputNumero"value=<?php echo $numero ?> required>
                             <div class="invalid-feedback">
                                 Por Favor insira um número válido.
                             </div>
@@ -111,21 +139,21 @@ $_SESSION['cpf']=$cpf;
                     <div class="form-row">
                         <div class="form-group col-sm-4">
                             <label for="inputBairro"> Bairro </label>
-                            <input type="text" class="form-control"  name="bairro" id="inputBairro" placeholder="Bairro" required>
+                            <input type="text" class="form-control"  name="bairro" id="inputBairro" value=<?php echo $bairro ?> required>
                             <div class="invalid-feedback">
                                 Por Favor insira um bairro válido.
                             </div>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="inputCidade"> Cidade </label>
-                            <input type="text" class="form-control" name="cidade" id="inputCidade" placeholder="Cidade" required>
+                            <input type="text" class="form-control" name="cidade" id="inputCidade" value=<?php echo $cidade ?> required>
                             <div class="invalid-feedback">
                                 Por Favor insira um cidade válido.
                             </div>
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="inputEstado"> Estado </label>
-                            <select id="inputEstado" class="form-control" name="estado">
+                            <select id="inputEstado" class="form-control"  name="estado">
                                 <option selected> Escolha ...</option>
                                 <option>Acre</option>
                                 <option>Alagoas</option>
@@ -161,7 +189,7 @@ $_SESSION['cpf']=$cpf;
                     <div class="form-row">
                         <div class="form-group col-sm-8">
                             <label for="inputComplemento">Complemento</label>
-                            <input type="text" class="form-control" name="complemento" id="inputComplemento" placeholder="Complemento">
+                            <input type="text" class="form-control" name="complemento" id="inputComplemento" value=<?php echo $complemento ?>>
                         </div>
                     </div>
                     <div class="form-row">
