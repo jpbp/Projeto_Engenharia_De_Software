@@ -1,18 +1,28 @@
-html,body {
-  font-family: 'Open Sans', serif;
-  font-size: 14px;
-  font-weight: 300;
+body {
+    height: 100vh;
+    width: 100%;
 }
-.hero.is-success {
-  background: #f2f7fa;
+
+form {
+    margin: 0;
 }
-.hero .nav, .hero.is-success .nav {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+
+.login img {
+    height: 90px;
+    margin: auto;
+    display: flex;
 }
-input {
-  font-weight: 300;
+
+.login {
+    background: #D3D3D3;
+    padding: 20px;
+    width: 400px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50, -50);
 }
-p {
-  font-weight: 700;
+
+#botao {
+    left: 75%;
 }

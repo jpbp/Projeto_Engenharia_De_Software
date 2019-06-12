@@ -1,0 +1,16 @@
+<!-- Tratamento de erro -->
+            <
+            <?php
+            if(isset($_SESSION['nao_autenticado'])): // verifica se o usuario não esta autenticado e aparece a msg
+            ?>
+            <div class="notification is-danger">
+                <p>ERRO: Usuário ou senha inválidos.</p>
+            </div>
+            <?php
+                endif;
+                unset($_SESSION['nao_autenticado']); // reseta o não_autentuca para não aparecer a mensagem de erro de ligin
+            ?>
+            -->
+
+
+                    action="../Controller/controller_login.php" method="POST"
