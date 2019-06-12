@@ -37,7 +37,7 @@ Confira [sobre a página na documentação do Software] (https://github.com/jpbp
 Esse topico é sobre definir regras e padrões de uso do Git para facilitar o trabalho colaborativo e aprimorar documentação, 
 
 - [Os commits devem ser intuitivos e resumidos]
-- [Não deve contém ambuiguidade nos commits]
+- [Não deve contém ambiguidade nos commits]
 - [Na pasta de requisitos estará somente a parte da documentação do projeto]
 - [Na pasta src ficara a parte da codificação do projeto.]
 - [Caso for fazer alguma manutenção criar uma nova branch]
