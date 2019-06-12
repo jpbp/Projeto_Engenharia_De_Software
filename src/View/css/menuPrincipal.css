@@ -1,3 +1,8 @@
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 .barra-lateral {
     color: ivory;
     background-color: brown;
@@ -122,6 +127,10 @@ nav .menu {
     border-bottom: 1px solid #A9A9A9;
 }
 
+#home {
+    border-top: 1px solid #A9A9A9;
+}
+
 .menu-list ul .sub-menu li:hover,
 .menu-list li .sub-menu li:hover {
     background-color: #020203;
@@ -185,4 +194,13 @@ nav .menu {
 .menu-list ul .sub-menu li:hover,
 .menu-list li .sub-menu li:hover {
     background-color: #020203;
+}
+
+.menu-list ul .sub-menu li.active a,
+.menu-list li .sub-menu li.active a {
+    color: #d19b3d;
+}
+
+#username {
+    color: darkgreen;
 }
