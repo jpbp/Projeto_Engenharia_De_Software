@@ -1,3 +1,6 @@
+<?php
+ session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -26,8 +29,8 @@
 
         <div class="login container" id="layoutLogin">
             <img src="imagens/hogwarts.png" alt="hogwarts">
-
-
+            
+            
             <!-- Username -->
             <div class="col-md-11 mb-3">
                 <label for="validationDefaultUsername">Username</label>
