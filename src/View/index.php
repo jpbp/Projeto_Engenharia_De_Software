@@ -24,7 +24,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/63cd9f4730.js"></script>
     <script>
-        // cira uma função home onde ao ser chamada pega a tag de id frame e altera o valor do atributo src
+        // cria uma função home onde ao ser chamada pega a tag de id frame e altera o valor do atributo src
         // document faz com que o javascript entre no DOM e getElementById procura o elemento com o id descrito dentro dos parentesses
         // ainda a posiblidade de usar Jquery framework js
         //função home usando jquery:
@@ -65,38 +65,40 @@
                         <a><i class="fab fa-fort-awesome"></i> Home
                         </a>
                     </li>
-
+                    <!-- Bruxos -->
                     <li data-toggle="collapse" data-target="#bruxos" class="collapsed active bruxos">
                         <a><i class="fas fa-hat-wizard"></i></i> Bruxos<span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="bruxos">
+                        <!-- Submenu -->
                         <li id="CadastrarBruxo" onclick="CadastrarBruxo()" class="button"><a><i class="fas fa-angle-right"></i>  Cadastrar </a></li>
                         <li id="BuscarBruxo" onclick="BuscarBruxo()" class="button"><a><i class="fas fa-angle-right"></i> Buscar </a></li>
 
                     </ul>
-
+                    <!-- Artigos mágicos -->
                     <li data-toggle="collapse" data-target="#produtos" class="collapsed active">
-                        <div class="setinha">
-                            <a><i class="fas fa-broom"></i> Artigos Mágicos </a>
-                            <i class="fas fa-angle-down"></i>
-                        </div>
+            
+                            <a><i class="fas fa-broom"></i> Artigos Mágicos <span class="arrow"></span> </a> 
                     </li>
                     <ul class="sub-menu collapse" id="produtos">
+                        <!-- Submenu -->
                         <li id="CadastrarProduto" onclick="CadastrarProduto()" class="button"><a>Cadastrar </a></li>
                         <li id="BuscarProduto" onclick="BuscarProduto()" class="button"><a>Buscar </a></li>
 
                     </ul>
 
+                    <!-- Pedidos -->
                     <li data-toggle="collapse" data-target="#pedidos" class="collapsed active">
-                        <a><i class="fas fa-cash-register"></i> Pedidos <i class="fas fa-angle-down"></i> </a>
+                        <a><i class="fas fa-cash-register"></i> Pedidos <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="pedidos">
-
+                        <!-- Submenu -->
                         <li id="CadastrarPedido" onclick="CadastrarPedido()" class="button"><a>Cadastrar </a></li>
                         <li id="BuscarPedido" onclick="BuscarPedido()" class="button"><a>Buscar </a></li>
 
                     </ul>
 
+                    <!-- Relatório-->
                     <li>
                         <a>
                             <i class="fas fa-chart-line"></i> Relatório
@@ -106,6 +108,7 @@
             </div>
         </nav>
     </div>
+    <!-- Barra do topo  -->
     <div class="col" style="padding-left: 0 !important">
         <div>
             <nav class="navbar navbar-light bg-light">
@@ -113,7 +116,7 @@
                 <div id="login">
                     <?php echo $_SESSION['usuario'];?> 
                     <a href = "logout.php"><i class="fas fa-door-open"></i></a>
-            </nav>
+                </nav>
             </div>
             <div>
                 <iframe id="frame" src="home.php" frameborder="0"></iframe>
