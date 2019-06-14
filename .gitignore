@@ -1,5 +1,5 @@
 ### arquivos para ignorar ###
-# Prerequisites
+.vscode/ 
 *.d
 
 # Compiled Object files
