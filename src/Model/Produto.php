@@ -13,5 +13,9 @@ class Produto {
         $this->quantidade=$quantidadev;
         $this->descricao=$descricaov;      
     }
+
+    public function getAtributos(){ //retona os atributos para consula do banco de dados
+      return "'null'".","."'".$this->nome."'".","."'".$this->preco."'".","."'".$this->descricao."'".","."'".$this->quantidade."'";
+  }
 }
 ?>

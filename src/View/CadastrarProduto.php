@@ -35,12 +35,12 @@
     <main class="principal">
         <div class="row justify-content-center mb-5">
             <div class="col-sm-12 col-md-10 col-lg-8">
-                <form method="POST" action="../Controller/controller_CadastrarCliente.php">
+                <form method="POST" action="../Controller/controller_CadastrarProduto.php">
                     <div class="form-row">
                         <div class="form-group col-sm-12">
 
                             <label for="inputNome">Nome</label>
-                            <input type="text" name="nome" class="form-control" id="inputNome" placeholder="Nome" required>
+                            <input type="text" name="nome" class="form-control" id="inputNome" placeholder="nome" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -49,7 +49,7 @@
                     <div class="form-row">
                         <div class="form-group col-sm-4">
                             <label for="inputPreco"> Preço </label>
-                            <input type="number" class="form-control" name="Preco" id="inputPreco" placeholder="Preco" required>
+                            <input type="number" class="form-control" name="preco" id="inputPreco" placeholder="preco" required>
                             <div class="invalid-feedback">
                                 Por Favor insira um Preço válido.
                             </div>
@@ -63,8 +63,8 @@
                             </div>
                         </div>
                         <div class="form-group col-sm-4">
-                            <label for="inputDescricaçao"> Descricaçao </label>
-                            <input type="number" class="form-control" id="inputDescricaçao" name="descricacao" placeholder="Descricaçao" required>
+                            <label for="inputDescricaçao"> Descriçao </label>
+                            <input type="text" class="form-control" id="inputDescricaçao" name="descricao" placeholder="descricaçao" required>
                             <div class="invalid-feedback">
                                 Por Favor insira um Descricaçao válido.
                             </div>
@@ -81,10 +81,14 @@
         </div>
     </main>
     <?php
-    if(!empty($_SESSION["cadastrou"])){
-        if($_SESSION["cadastrou"]){
-            echo "<script>alert('Cadastro realizado com sucesso !');</script>";
-            unset($_SESSION["cadastrou"]);
+    if(!empty($_SESSION['produto'])){
+        if($_SESSION['produto']){
+            echo "<script>alert('Produto Cadastrato  com sucesso !');</script>";
+            unset($_SESSION['produto']);
+        }
+        else{
+            echo "<script>alert('Produto não foi Cadastrato  :( !');</script>";
+            unset($_SESSION['produto']);
         }
     }
     ?>
