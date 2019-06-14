@@ -113,8 +113,8 @@ DEFAULT CHARACTER SET = latin1;
 CREATE TABLE IF NOT EXISTS `lojahogwarts`.`Produtos` (
   `idProdutos` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
-  `preço` DECIMAL(6,2) NOT NULL,
-  `Descrição` VARCHAR(45) NULL DEFAULT NULL,
+  `preco` DECIMAL(7,2) NOT NULL,
+  `descricao` VARCHAR(45) NULL DEFAULT NULL,
   `quantidade` int(3) NOT NULL,
   PRIMARY KEY (`idProdutos`))
 ENGINE = InnoDB
