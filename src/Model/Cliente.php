@@ -1,7 +1,7 @@
 <?php
  
 class Cliente {
-  
+  //atributos
     private $nome;
     private $cpf;
     private $residencial;
@@ -14,7 +14,7 @@ class Cliente {
     private $complemento;
     private $numero;
     private $estado;
-
+    //construtor da classe
     public function Cliente($nomev,$cpfv,$residencialv,$celularv,$emailv,$cepv,$logradourov,$bairrov,$cidadev,$complementov,$numerov,$estadov){
     	$this->nome=$nomev;
     	$this->cpf=$cpfv;
@@ -29,7 +29,7 @@ class Cliente {
     	$this->numero=$numerov;
     	$this->estado=$estadov;
     }
-
+    //gets dos atributos
     function getNome(){
         return $this->nome;
     }
@@ -81,7 +81,7 @@ class Cliente {
     public function imprimir(){
     	return $this->nome." , ".$this->cpf;  
     } 
-    public function getAtributos(){
+    public function getAtributos(){ //retona os atributos para consula do banco de dados
         return "'".$this->nome."'".","."'".$this->cpf."'".","."'".$this->residencial."'".","."'".$this->celular."'".","."'".$this->email."'".","."'".$this->cep."'".","."'".$this->logradouro."'".","."'".$this->bairro."'".","."'".$this->cidade."'"." ,"."'".$this->complemento."'".","."'".$this->numero."'".","."'".$this->estado."'";
     } 
 } 

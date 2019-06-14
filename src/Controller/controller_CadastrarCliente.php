@@ -1,5 +1,6 @@
 <?php
 session_start();
+//importando arquivos que va ser usados
 include("../Model/Cliente.php");
 include("../Persistence/Conection.php");
 include("../Persistence/ClienteDao.php");
@@ -25,16 +26,16 @@ $c1= new Cliente($nome,$cpf,$residencial,$celular,$email,$cep,$logradouro,$bairr
 $con = new Conection("localhost","root","","lojahogwarts");
 $con->conectar();
 
-
+//criar objeto dao
 $clienteDAO = new ClienteDao();
-if($clienteDAO->cadastrarCliente($c1,$con->getLink()) ){
-    $_SESSION['cadastrou']=true;
-    header('Location: ../View/CadastrarCliente.php');
+if($clienteDAO->cadastrarCliente($c1,$con->getLink()) ){ 
+    $_SESSION['cadastrou']=true; //caso verdadeiro ele vai cadastarr o cliente no banco
+    header('Location: ../View/CadastrarCliente.php'); // volta para pagina de cadastro
     exit();    
 }
 else{
-    $_SESSION['cadastrou']=false;
-    header('Location: ../View/CadastrarCliente.php');
+    $_SESSION['cadastrou']=false; // se não ele cancela
+    header('Location: ../View/CadastrarCliente.php'); //volta para pagina cadastro
     exit(); 
 }
 ?>

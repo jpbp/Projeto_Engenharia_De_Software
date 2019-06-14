@@ -1,17 +1,17 @@
 <?php
 
 class ClienteDao{
-	public function ClienteDao(){
+	public function ClienteDao(){ //construtor da classe
 
 	}
-	function buscarClienteFormulario($cliente,$link){
+	function buscarClienteFormulario($cliente,$link){ //busca o cliente no mando de dados atravas do cpf
 		$query = "SELECT * FROM `Clientes`  WHERE cpf = '".$cliente->getCpf()."'";
 		$r = mysqli_query($link, $query);
 		return $r;
 
 	}
 
-	 function cadastrarCliente($Cliente,$link){
+	 function cadastrarCliente($Cliente,$link){ //cadasrtar cliente no banco de dados
 			 $query = "INSERT INTO `Clientes` (`nome`, `cpf`, `residencial`, `celular`, `email`, `cep`, `logradouro`, `bairro`, `cidade`, `complemento`, `numero`, `estado`) VALUES 
 			(".$Cliente->getAtributos().");";
 			
@@ -27,7 +27,7 @@ class ClienteDao{
 			return $verifica;
 		}
 
-	 function buscarCliente($cliente, $link){
+	 function buscarCliente($cliente, $link){ //busca os clientes do banco de dados
 
 	 	$query = "SELECT * FROM `Clientes` WHERE `nome` LIKE '".$cliente->getNome()."%'";
 	 	
@@ -41,7 +41,7 @@ class ClienteDao{
 
 	 }
 
-	 function excluirCliente($cliente,$link){
+	 function excluirCliente($cliente,$link){ //exclui cliente
 
 	 	$query = "DELETE FROM `Clientes` WHERE cpf = '".$cliente->getCpf()."'";
 	 	echo $query;
@@ -52,7 +52,7 @@ class ClienteDao{
 			echo "excluido";
 			
 	 }
-	 function alterarCliente($cliente,$link){
+	 function alterarCliente($cliente,$link){ //alterar cliente 
 	 	$query = "UPDATE `Clientes` SET `nome`='".$cliente->getNome().
 					"',`residencial`='".$cliente->getResidencial().
 					"',`celular`='".$cliente->getCelular().

@@ -17,14 +17,14 @@
 		    <button class="button" type="submit" name="Buscar">Buscar</button><br>
 		</form>	
 	<?php
-		if(!empty($_SESSION['busca'])){
+		if(!empty($_SESSION['busca'])){ //se a busca não estiver vazia 
 
-			if($_SESSION['busca']=='nada'){
-				echo "nenhum usuario encontrado";
+			if($_SESSION['busca']=='nada'){ // caso não haver nenhum resultadp
+				echo "nenhum usuario encontrado"; 
 			}
 			else{
 
-			echo $_SESSION['busca'];
+			echo $_SESSION['busca']; //retorna
 			unset($_SESSION['busca']);
 			}
 		}

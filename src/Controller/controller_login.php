@@ -11,6 +11,8 @@ $con->conectar();
 $usuario = $_POST["usuario"];
 $senha = $_POST["senha"];
 
+
+//verificao do login
 if(empty($usuario) || empty($senha)){
   $_SESSION['nao_autenticado']=true;
   header('Location: ../View/login.php'); //se o usuario ou senha não for valido ele volta pra tela de login  
