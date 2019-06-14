@@ -45,6 +45,17 @@
             document.getElementById("frame").src = "BuscarCliente.php";
         }
 
+        function CadastrarProduto(){
+       
+            document.getElementById("frame").src = "CadastrarProduto.php";
+        }
+
+        function BuscarProduto(){
+       
+       document.getElementById("frame").src = "BuscarProduto.php";
+   }
+
+
     </script>
 
 </head>
