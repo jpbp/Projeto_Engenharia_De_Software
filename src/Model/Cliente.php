@@ -3,17 +3,17 @@
 class Cliente {
   //atributos
     private $nome;
-    private $cpf;
     private $residencial;
-    private $celular;
     private $email;
-    private $cep;
+    private $cpf;
     private $logradouro;
     private $bairro;
     private $cidade;
     private $complemento;
     private $numero;
     private $estado;
+    private $cep;
+    private $celular;
     //construtor da classe
     public function Cliente($nomev,$cpfv,$residencialv,$celularv,$emailv,$cepv,$logradourov,$bairrov,$cidadev,$complementov,$numerov,$estadov){
     	$this->nome=$nomev;
