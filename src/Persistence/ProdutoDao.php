@@ -21,6 +21,18 @@ class ProdutoDao{
            return $verifica;
        }
 
+       function buscarProduto($Produto,$link){
+        $query = "SELECT * FROM `produtos` WHERE `nome` LIKE '".$Produto->getNome()."%'";
+        $r = mysqli_query($link, $query);
+		if (!$r){
+			echo "Erro do banco de dados, não foi possível consultar o banco de dados\n";
+			echo 'Erro MySQL: ' . mysqli_error();
+				exit;
+            }
+		return $r;
+
+    }
+
 
 
     }
