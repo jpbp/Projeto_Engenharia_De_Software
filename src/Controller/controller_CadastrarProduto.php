@@ -1,6 +1,6 @@
 <?php
 session_start(); // pega a seção para poder verificar se o usuario não esta autenticado
-include("verificalogin.php");
+//include("verificalogin.php");
 include("../Model/Produto.php");
 include("../Persistence/Conection.php");
 include("../Persistence/ProdutoDao.php");
