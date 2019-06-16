@@ -33,8 +33,34 @@ class ProdutoDao{
 
     }
 
+    function removerProduto($id,$link){
+        $query = "DELETE FROM `produtos` WHERE `idProdutos` = '".$id."'";
+        if(!mysqli_query($link,$query)){
+            
+            die ("nao foi possivel excluir".mysqli_error($link));
+            
+        }
+    }
 
+        function buscarProdutoFormulario ($id,$link){
+            
+        $query = "SELECT * FROM `produtos`  WHERE idProdutos = '".$id."'";
+		$r = mysqli_query($link, $query);
+		return $r;
+        }
 
+        function alterarProduto($Produto,$link){ //alterar cliente 
+            $query = "UPDATE `produtos` SET `nome`='".$Produto->getNome().
+                       "',`preco`='".$Produto->getPreco().
+                       "',`descricao`='".$Produto->getDescricao().
+                       "',`quantidade`='".$Produto->getQuantidade()."'";
+               if(!mysqli_query($link,$query)){
+                   
+                   return false;
+               }
+               return true;
+        }
+        
     }
 
     

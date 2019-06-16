@@ -32,7 +32,7 @@ if($dado){
     exit();
 }else{
 	$_SESSION['alterado']="<script>alert('Não foi ṕossivel alterar o cliente');</script>";
-	header('Location: ../View/BuscarCliente.php');
+	header('Location: ../View/BuscarProduto.php');
     exit();
 
 }

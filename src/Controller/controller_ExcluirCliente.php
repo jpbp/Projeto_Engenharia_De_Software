@@ -20,8 +20,8 @@ $clienteDAO->excluirCliente($c1,$con->getLink());
 	
 
 $_SESSION['excluiu']="<script>alert('Excluido com sucesso!!');</script>";
-	header('Location: ../View/BuscarCliente.php');
-    exit();
+header('Location: ../View/BuscarCliente.php');
+exit();
 	
 
 
