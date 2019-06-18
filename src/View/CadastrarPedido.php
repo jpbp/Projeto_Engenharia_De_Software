@@ -1,14 +1,18 @@
 <?php
 include("../Model/Cliente.php");
+include("../Model/Produto.php");
 include("../Persistence/Conection.php");
 include("../Persistence/ClienteDao.php");
+include("../Persistence/ProdutoDao.php");
 $c1= new Cliente("","","","","","","","","","","","");
+$p1= new Produto("","","","");
 
 $con = new Conection("localhost","root","","lojahogwarts");
 $con->conectar();
 $cDAO = new ClienteDao();
-$resultado = $cDAO->buscarCliente($c1,$con->getLink());
-
+$pDAO = new ProdutoDao();
+$resultadoC =$cDAO->buscarCliente($c1,$con->getLink());
+$resultadoP =$pDAO->buscarProduto($p1,$con->getLink()); 
 ?>
 
 <html>
@@ -44,101 +48,42 @@ $resultado = $cDAO->buscarCliente($c1,$con->getLink());
         <div class="col-sm-12 col-md-10 col-lg-8">
             <form method="POST" action="../Controller/controller_CadastrarCliente.php">
                 <div class="form-row">
-                    <div class="form-group col-sm-12">
-
-                        <label for="inputNome">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="inputNome" placeholder="Nome" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group col-sm-4">
-                        <label for="inputCpf"> CPF </label>
-                        <input type="number" class="form-control" name="cpf" id="inputCpf" placeholder="CPF" required>
-                        <div class="invalid-feedback">
-                            Por Favor insira um CPF válido.
-                        </div>
-                    </div>
-
-                    <div class="form-group col-sm-4">
-                        <label for="inputResidencial"> Residencial </label>
-                        <input type="number" class="form-control" name="residencial" id="inputResidencial" placeholder="Residencial" required>
-                        <div class="invalid-feedback">
-                            Por Favor insira um telefone válido.
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <label for="inputCelular"> Celular </label>
-                        <input type="number" class="form-control" id="inputCelular" name="celular" placeholder="Celular" required>
-                        <div class="invalid-feedback">
-                            Por Favor insira um celular válido.
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-sm-12">
-                        <label for="inputEmail"> Email </label>
-                        <input type="text" class="form-control" id="inputEmail"  name="email" placeholder="Email" required>
-                        <div class="invalid-feedback">
-                            Por Favor insira um email válido.
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-sm-4">
-                        <label for="inputCep"> CEP </label>
-                        <input type="number" class="form-control" name="cep" id="inputCep" placeholder="CEP" required>
-                        <div class="invalid-feedback">
-                            Por Favor insira um cep válido.
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-sm-8">
-                        <label for="inputEndereco"> Endereço </label>
-                        <input type="text" name="logradouro" class="form-control" id="inputEndereco" placeholder="Endereço" required>
-                        <div class="invalid-feedback">
-                            Por Favor insira um enderecço válido.
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <label for="inputNumero"> Número </label>
-                        <input type="text" name="numero" class="form-control" id="inputNumero" placeholder="Número" required>
-                        <div class="invalid-feedback">
-                            Por Favor insira um número válido.
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-sm-4">
-                        <label for="inputBairro"> Bairro </label>
-                        <input type="text" class="form-control"  name="bairro" id="inputBairro" placeholder="Bairro" required>
-                        <div class="invalid-feedback">
-                            Por Favor insira um bairro válido.
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <label for="inputCidade"> Cidade </label>
-                        <input type="text" class="form-control" name="cidade" id="inputCidade" placeholder="Cidade" required>
-                        <div class="invalid-feedback">
-                            Por Favor insira um cidade válido.
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <label for="inputEstado"> Estado </label>
-                        <select id="inputEstado" class="form-control" name="estado">
+                        <label for="inputEstado"> Bruxo </label>
+                        <select id="inputEstado" class="form-control" name="Bruxo">
                         <option>Bruxo</option>
             <?php 
-                while($row_resultado=mysqli_fetch_assoc($resultado)){?>
+                while($row_resultado=mysqli_fetch_assoc($resultadoC)){?>
                 <option value= "<?php echo $row_resultado['cpf'];?>"><?php echo $row_resultado['nome'];?>
                 
                 </option><?php }?>
                         </select>
                        
                     </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="inputEstado"> Produto </label>
+                        <select id="inputEstado" class="form-control" name="produto">
+                        <option>Produto</option>
+            <?php 
+                while($row_resultado=mysqli_fetch_assoc($resultadoP)){?>
+                <option value= "<?php echo $row_resultado['idProduto'];?>"><?php echo $row_resultado['nome'];?>
+                
+                </option><?php }?>
+                        </select>
+                       
+                    </div>
+
                 </div>
+
+                <div class="form-row">
+                        <div class="form-group col-sm-4">
+                            <label for="inputData"> Data </label>
+                            <input type="date" class="form-control"  name="data" id="inputData" placeholder="Data" required>
+                            <div class="invalid-feedback">
+                                Por Favor insira um Data válido.
+                            </div>
+                        </div>  
                 <div class="form-row">
                     <div id="botao" class="col-sm-8">
                         <button type="submit" class="btn btn-success">Salvar</button>
