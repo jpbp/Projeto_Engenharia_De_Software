@@ -51,9 +51,11 @@
         }
 
         function BuscarProduto(){
-       
-       document.getElementById("frame").src = "BuscarProduto.php";
-   }
+            document.getElementById("frame").src = "BuscarProduto.php";
+         }
+        function CadastrarPedido(){
+            document.getElementById("frame").src = " CadastrarPedido.php";
+        }
 
 
     </script>
