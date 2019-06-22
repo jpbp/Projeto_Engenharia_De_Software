@@ -21,7 +21,10 @@
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link rel="stylesheet" href="css/menuPrincipal.css">
+
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
+    
     <script src="https://kit.fontawesome.com/63cd9f4730.js"></script>
     <script>
         // cria uma função home onde ao ser chamada pega a tag de id frame e altera o valor do atributo src
@@ -68,7 +71,7 @@
 
             <img src="imagens/hogwarts.png" alt="Hogwarts">
 
-            <h3>Loja Hogwarts</h3>
+            <h3>Loja Hogwarts </h3>
 
             <div class="menu-list">
 
