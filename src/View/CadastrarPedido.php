@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../Model/Cliente.php");
 include("../Model/Produto.php");
 include("../Persistence/Conection.php");
@@ -13,6 +14,7 @@ $cDAO = new ClienteDao();
 $pDAO = new ProdutoDao();
 $resultadoC =$cDAO->buscarCliente($c1,$con->getLink());
 $resultadoP =$pDAO->buscarProduto($p1,$con->getLink()); 
+
 ?>
 
 <html>
@@ -46,11 +48,11 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
 <main class="principal">
     <div class="row justify-content-center mb-5">
         <div class="col-sm-12 col-md-10 col-lg-8">
-            <form method="POST" action="../Controller/controller_CadastrarCliente.php">
+            <form method="POST" action="../Controller/controller_CadastrarPedido.php">
                 <div class="form-row">
                     <div class="form-group col-sm-4">
-                        <label for="inputEstado"> Bruxo </label>
-                        <select id="inputEstado" class="form-control" name="Bruxo">
+                        <label for="inputBruxo"> Bruxo </label>
+                        <select id="inputBurxo" class="form-control" name="bruxo">
                         <option>Bruxo</option>
             <?php 
                 while($row_resultado=mysqli_fetch_assoc($resultadoC)){?>
@@ -62,8 +64,8 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                     </div>
 
                     <div class="form-group col-sm-4">
-                        <label for="inputEstado"> Produto </label>
-                        <select id="inputEstado" class="form-control" name="produto">
+                        <label for="inputProduto"> Produto </label>
+                        <select id="inputProduto" class="form-control" name="produto">
                         <option>Produto</option>
             <?php 
                 while($row_resultado=mysqli_fetch_assoc($resultadoP)){?>
@@ -84,6 +86,38 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                                 Por Favor insira um Data válido.
                             </div>
                         </div>  
+                </div> 
+                
+                <div class="form-row">
+                        <div class="form-group col-sm-4">
+                            <label for="inputPreco"> preço </label>
+                            <input type="number" class="form-control"  name="preco" id="inputPreco"  required>
+                            <div class="invalid-feedback">
+                                Por Favor insira um Preco válido.
+                            </div>
+                        </div>  
+                </div> 
+                <div class="form-row">
+                        <div class="form-group col-sm-4">
+                            <label for="inputPreco"> cpf </label>
+                            <input type="number" class="form-control"  value= <?php echo $_SESSION["cpfUser"] ?>  name="cpf" id="inputcpf"   disabled>
+                            <div class="invalid-feedback">
+                                Por Favor insira um Preco válido.
+                            </div>
+                        </div>  
+                </div> 
+
+                
+                <div class="form-row">
+                        <div class="form-group col-sm-4">
+                            <label for="inputqtd"> quantidade </label>
+                            <input type="number" class="form-control"  name="qtd" id="inputqtd" required>
+                            <div class="invalid-feedback">
+                                Por Favor insira um qtd válido.
+                            </div>
+                        </div>  
+                </div> 
+
                 <div class="form-row">
                     <div id="botao" class="col-sm-8">
                         <button type="submit" class="btn btn-success">Salvar</button>
@@ -93,6 +127,8 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
         </div>
     </div>
 </main>
+
+                    
 </body>
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
