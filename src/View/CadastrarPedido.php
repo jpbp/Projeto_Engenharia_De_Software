@@ -42,7 +42,7 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
 
 <div class="Titulo">
     <h3>
-        Cadastro de Bruxo
+        Cadastro de Pedido
     </h3>
 </div>
 <main class="principal">
