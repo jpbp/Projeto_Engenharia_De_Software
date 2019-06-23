@@ -14,54 +14,15 @@
     <!-- Responsivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap  -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Css interno -->
+    <link rel="stylesheet" href="css/index.css">
 
-    <!-- Custom styles for this template -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/menuPrincipal.css">
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
-    
+    <!-- Icones decorativos-->
     <script src="https://kit.fontawesome.com/63cd9f4730.js"></script>
-    <script>
-        // cria uma função home onde ao ser chamada pega a tag de id frame e altera o valor do atributo src
-        // document faz com que o javascript entre no DOM e getElementById procura o elemento com o id descrito dentro dos parentesses
-        // ainda a posiblidade de usar Jquery framework js
-        //função home usando jquery:
-        // $("#home").click(function(){
-        //    $("#frame").attr("src", "home.html");
-        // });
-        // no caso do jquery não utiliza o atributo onclick dentro da tag como você vai ver mais a baixo
-        // para mais jquery: https://jquery.com/
-        function home() {
-            document.getElementById("frame").src = "home.php";
-        }
-
-        function CadastrarBruxo() {
-            document.getElementById("frame").src = "CadastrarCliente.php";
-        }
-
-        function BuscarBruxo() {
-            document.getElementById("frame").src = "BuscarCliente.php";
-        }
-
-        function CadastrarProduto(){
-       
-            document.getElementById("frame").src = "CadastrarProduto.php";
-        }
-
-        function BuscarProduto(){
-            document.getElementById("frame").src = "BuscarProduto.php";
-         }
-        function CadastrarPedido(){
-            document.getElementById("frame").src = " CadastrarPedido.php";
-        }
-
-
-    </script>
+    <script src="jquery/jquery.js" type="text/javascript"></script>
+    <script src="jquery/index.js"></script>
 
 </head>
 
@@ -78,23 +39,23 @@
                 <ul class="menuLink" id="nav">
 
                     <li id="home" onclick="home()" class="button">
-                        <a><i class="fab fa-fort-awesome"></i> Home
+                        <a><i class="fab fa-fort-awesome fa-fw"></i> Home
                         </a>
                     </li>
                     <!-- Bruxos -->
                     <li data-toggle="collapse" data-target="#bruxos" class="collapsed active bruxos">
-                        <a><i class="fas fa-hat-wizard"></i></i> Bruxos<span class="arrow"></span></a>
+                        <a><i class="fas fa-hat-wizard fa-fw"></i></i> Bruxos<span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="bruxos">
                         <!-- Submenu -->
-                        <li id="CadastrarBruxo" onclick="CadastrarBruxo()" class="button"><a><i class="fas fa-angle-right"></i>  Cadastrar </a></li>
-                        <li id="BuscarBruxo" onclick="BuscarBruxo()" class="button"><a><i class="fas fa-angle-right"></i> Buscar </a></li>
+                        <li id="CadastrarBruxo" onclick="CadastrarBruxo()" class="button active"><a><i class="fas fa-angle-right"></i>  Cadastrar </a></li>
+                        <li id="BuscarBruxo" onclick="BuscarBruxo()" class="button active"><a><i class="fas fa-angle-right"></i> Buscar </a></li>
 
                     </ul>
                     <!-- Artigos mágicos -->
                     <li data-toggle="collapse" data-target="#produtos" class="collapsed active">
             
-                            <a><i class="fas fa-broom"></i> Artigos Mágicos <span class="arrow"></span> </a> 
+                            <a><i class="fas fa-broom fa-fw"></i> Artigos Mágicos <span class="arrow"></span> </a> 
                     </li>
                     <ul class="sub-menu collapse" id="produtos">
                         <!-- Submenu -->
@@ -105,7 +66,7 @@
 
                     <!-- Pedidos -->
                     <li data-toggle="collapse" data-target="#pedidos" class="collapsed active">
-                        <a><i class="fas fa-cash-register"></i> Pedidos <span class="arrow"></span></a>
+                        <a><i class="fas fa-cash-register fa-fw"></i> Pedidos <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="pedidos">
                         <!-- Submenu -->
@@ -117,7 +78,7 @@
                     <!-- Relatório-->
                     <li>
                         <a>
-                            <i class="fas fa-chart-line"></i> Relatório
+                            <i class="fas fa-chart-line fa-fw"></i> Relatório
                         </a>
                     </li>
                 </ul>
