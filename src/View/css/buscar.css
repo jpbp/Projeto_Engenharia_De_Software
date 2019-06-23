@@ -1,0 +1,16 @@
+.Titulo {
+    margin: 30px;
+    color: darkgreen;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.barraPesquisa {
+    height: 100%;
+    margin: auto;
+    display: flex;
+}
+
+main {
+    margin: 20px;
+    padding: 30PX;
+}
