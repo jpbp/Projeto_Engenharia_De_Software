@@ -50,8 +50,8 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
     <main class="principal">
         <div class="row justify-content-center mb-5">
             <div class="col-sm-12 col-md-10 col-lg-8">
-                <form method="POST" action="#">
-
+                <form method="POST" action="../Controller/controller_CadastrarPedido.php">
+                    <form> 
                     <!-- Número Pedido e Cpf -->
                     <div class="form-row centralizado">
                         <div class="form-group col-sm-3">
@@ -65,37 +65,11 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                             <input type="date" class="form-control"  name="data" id="inputdata" placeholder="data" required>
                         </div>
                     </div>
-
-                    <!-- Buscar Bruxo -->
-                    <div class="form-row centralizado">
-                        <div class="form-group col-sm-6">
-                            <label> Bruxo </label>
-<<<<<<< HEAD
-                            <select class="js-example-basic-single form-control" id="combo-bruxos" name="bruxo" onchange = "myFunction1()">
-                       	        <option>Bruxo</option>
-            		            <?php 
-              			            while($row_resultado=mysqli_fetch_assoc($resultadoC)){?>
-               		 		    <option value= "<?php echo $row_resultado['cpf'];?>" data-bruxo = "<?php echo $row_resultado['cpf'];?>"><?php echo $row_resultado['nome'];?> </option>
-			                     <?php }?>
-                        </select>
-
-                           
->>>>>>> d5ad984380a810670a1c83c06279646c3605c8a5
-                        </div>
-
-                        <div class="form-group col-sm-5">
-                            <fieldset disabled>
-                                <label for="inputCpf"> CPF </label>
-                                <input type="text"  value= <?php echo $_SESSION['cpfUser'];   ?> class="form-control" name="cpf" id="inputCpf" placeholder="CPF" required>
-                            </fieldset>
-                        </div>
-                    </div>
-
-                    <!-- Buscar Produto-->
-                    <div class="form-row centralizado">
+                     <!-- Buscar Produto-->
+                     <div class="form-row centralizado">
                         <div class="form-group col-sm-6">
                             <label> Artigos Mágicos </label>
-<<<<<<< HEAD
+
 
                             <select class="js-example-basic-single form-control" id="combo-produtos" name="produto" onchange = "myFunction()">
                                 <option data-preco="0.0">Selecione</option>
@@ -120,12 +94,14 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                     <!-- Botão Adicionar na tabela -->
                     <div class="form-row">
                         <div id="botao" class="col-sm-2">
-                            <button type="submit" class="btn btn-success">Entrar</button>
+                            <button name ='btn' type="submit" class="btn btn-success" >Entrar</button>
+
                         </div>
                     </div>
-
-                    <!-- Tabela-->
-                    <div class="form-row">
+                    </form>
+                
+                    
+                 <div class="form-row">
                         <table class="table table-hover">
                             <thead>
                                 <tr class="bg-warning">
@@ -158,22 +134,32 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                             </tbody>
                         </table>
                     </div>
-
-                    <!-- Vendedor e Preço Total -->
+                    <!-- Buscar Bruxo -->
                     <div class="form-row centralizado">
-                        <div class="form-group col-sm-4">
+                        <div class="form-group col-sm-6">
+                            <label> Bruxo </label>
+
+                            <select class="js-example-basic-single form-control" id="combo-bruxos" name="bruxo" onchange = "myFunction1()">
+                       	        <option>Bruxo</option>
+            		            <?php 
+              			            while($row_resultado=mysqli_fetch_assoc($resultadoC)){?>
+               		 		    <option value= "<?php echo $row_resultado['cpf'];?>" data-bruxo = "<?php echo $row_resultado['cpf'];?>"><?php echo $row_resultado['nome'];?> </option>
+			                     <?php }?>
+                        </select>
+
+                           
+
+                        </div>
+
+                        <div class="form-group col-sm-5">
                             <fieldset disabled>
-                                <label for="disabledVendedor "> Vendedor </label>
-                                <input type="text" value="<?php echo $_SESSION["usuario"] ?>" class="form-control" name="vendedor" id="disabledVendedor" placeholder="Vendedor" >
+                                <label for="inputCpf"> CPF </label>
+                                <input type="text"  value= <?php echo $_SESSION['cpfUser'];   ?> class="form-control" name="cpf" id="inputCpf" placeholder="CPF" required>
                             </fieldset>
                         </div>
-
-                        <div class="form-group col-sm-3">
-                            <label for="inputPreco"> Preço Total</label>
-                            <input type="integer" class="form-control" name="precoTotal" id="inputPreco" placeholder="" >
-                        </div>
                     </div>
-
+                    </form>
+                    <form> 
                     <!-- Radio Button-->
                     <div class="form-row btnRadio">
                         <div class="form-check col-sm-3">
@@ -226,6 +212,23 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                             </div>
                         </div>
                     </div>
+                   
+                  
+                    <!-- Vendedor e Preço Total -->
+                    <div class="form-row centralizado">
+                        <div class="form-group col-sm-4">
+                            <fieldset disabled>
+                                <label for="disabledVendedor "> Vendedor </label>
+                                <input type="text" value="<?php echo $_SESSION["usuario"] ?>" class="form-control" name="vendedor" id="disabledVendedor" placeholder="Vendedor" >
+                            </fieldset>
+                        </div>
+
+                        <div class="form-group col-sm-3">
+                            <label for="inputPreco"> Preço Total</label>
+                            <input type="integer" class="form-control" name="precoTotal" id="inputPreco" placeholder="" >
+                        </div>
+                    </div>
+
                         <div class="form-row">
                             <div id="botao1" class="col-sm-2">
                                 <button type="submit" class="btn btn-success">Cadastrar</button>

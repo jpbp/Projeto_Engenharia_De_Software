@@ -1,24 +1,23 @@
 <?php
     session_start();
-    include("../Model/Pedido.php");
+    include("../Model/Produto.php");
     include("../Persistence/Conection.php");
-    include("../Persistence/ClienteDao.php");
-
-   
-    $nomeProduto=$_POST["produto"];
-    
-    $produto = new Produto("",$nomeProduto,"","","");
+    include("../Persistence/ProdutoDao.php");
 
 
-    $con = new Conection("localhost","root","","lojahogwarts");
-    $con->conectar();
 
-    $pDao = new ProdutoDao();
-    
-    $linha=$pDao->getProduto();
 
-   
-  
+    $idNum=$_POST["numero"];
+    $data=$_POST["data"];
+    $nomeBruxo=$_POST["bruxo"];
+    $cpfBruxo=$_POST["cpf"];
+    $cpfUser=$_POST["cpfUser"];
+    $idproduto=$_POST["produto"];
+    $qtd=$_POST["qtd"];
+    $vendendor=$_POST["vendendor"];
+    echo $idNum,$data,$nomeBruxo,$cpfBruxo,$cpfUser,$produto,$qtd,$vendendor;
     
 
+}
+    
 ?>
