@@ -17,12 +17,21 @@ $f1=new Funcionario("","","","","","","","","","","",$usuario,$senha,"");
 
 $Fdao= new FuncionarioDao();
 $consulta=$Fdao->verificaLogin($f1,$con->getLink());
+
+
 if(mysqli_num_rows($consulta)==1){
     $row = mysqli_fetch_row($consulta);
     $_SESSION['usuario']=$row[11];
     $_SESSION['cpfUser']=$row[1];
-    header('Location: ../View/index.php');
-    exit();
+    $verificaGerente=$Fdao->verificaGerente($row[1],$con->getLink());
+    if($verificaGerente){
+      header('Location: ../View/indexFuncionario.php');
+      exit();
+    }
+    else{
+      header('Location: ../View/index.php');
+      exit();
+    }
   }
   //se não o usuario ou senha não for valido ele volta pra tela de login  
   else{
