@@ -70,6 +70,7 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                     <div class="form-row centralizado">
                         <div class="form-group col-sm-6">
                             <label> Bruxo </label>
+<<<<<<< HEAD
                             <select class="js-example-basic-single form-control" id="combo-bruxos" name="bruxo" onchange = "myFunction1()">
                        	        <option>Bruxo</option>
             		            <?php 
@@ -77,6 +78,9 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                		 		    <option value= "<?php echo $row_resultado['cpf'];?>" data-bruxo = "<?php echo $row_resultado['cpf'];?>"><?php echo $row_resultado['nome'];?> </option>
 			                     <?php }?>
                         </select>
+
+                           
+>>>>>>> d5ad984380a810670a1c83c06279646c3605c8a5
                         </div>
 
                         <div class="form-group col-sm-5">
@@ -91,12 +95,15 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                     <div class="form-row centralizado">
                         <div class="form-group col-sm-6">
                             <label> Artigos Mágicos </label>
+<<<<<<< HEAD
 
                             <select class="js-example-basic-single form-control" id="combo-produtos" name="produto" onchange = "myFunction()">
                                 <option data-preco="0.0">Selecione</option>
                             <?php 
                                  while($row_resultado=mysqli_fetch_assoc($resultadoP)){?>
                              <option value= "<?php echo $row_resultado['idProdutos'];?>" data-preco = "<?php echo $row_resultado['preco'];?>"><?php echo $row_resultado['nome'];?></option><?php }?>
+
+                      
                             </select>
                         </div>
                         <div class="form-group col-sm-3">

@@ -26,13 +26,21 @@ function CadastrarPedido() {
     document.getElementById("frame").src = "CadastrarPedido.php";
 }
 
-function CadastrarFuncionario(){
+function BuscarPedido() {
+    document.getElementById("frame").src = "BuscarPedido.php";
+}
+
+function CadastrarFuncionario() {
     document.getElementById("frame").src = "CadastrarFuncionario.php";
 }
-function BuscarFuncionario(){
+
+function BuscarFuncionario() {
     document.getElementById("frame").src = "BuscarFuncionario.php";
 }
 
+function Relatorio() {
+    document.getElementById("frame").src = "relatorio.php";
+}
 
 $(document).ready(function() {
     $('li').click(function() {

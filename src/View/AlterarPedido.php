@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Menu Principal</title>
+    <title>Alterar Pedido</title>
     <meta name="author" content="Gabrielle">
     <link rel="icon" href="imagens/hogwarts.png">
 
@@ -21,7 +21,7 @@
 <body>
     <div class="Titulo">
         <h3>
-            Cadastro Pedido
+            Alterar Pedido
         </h3>
     </div>
     <main class="principal">
@@ -32,14 +32,17 @@
                     <!-- Número Pedido e Cpf -->
                     <div class="form-row centralizado">
                         <div class="form-group col-sm-3">
-
-                            <label for="inputNome">Número Pedido</label>
-                            <input type="text" name="número" class="form-control" id="inputNome" placeholder="Número" required>
-
+                            <fieldset disabled>
+                                <label for="inputNome">Número Pedido</label>
+                                <input type="text" name="numero" class="form-control" id="inputNome" placeholder="Número" required>
+                            </fieldset>
                         </div>
                         <div class="form-group col-sm-5" id="cpf">
-                            <label for="inputCpf"> Data </label>
-                            <input type="date" class="form-control" name="cpf" id="inputCpf" placeholder="CPF" required>
+                            <fieldset disabled>
+                                <label for="inputCpf"> Data </label>
+                                <input type="date" class="form-control" name="cpf" id="inputCpf" placeholder="CPF" required>
+                            </fieldset>
+
                         </div>
                     </div>
 
@@ -47,10 +50,12 @@
                     <div class="form-row centralizado">
                         <div class="form-group col-sm-6">
                             <label> Bruxo </label>
-                            <select class="js-example-basic-single form-control" name="state">
+                            <fieldset disabled !important>
+                                <select class="js-example-basic-single form-control" name="state">
                                     <option value="AL">Alabama</option>
                                     <option value="WY">Wyoming</option>
-                            </select>
+                                </select>
+                            </fieldset>
                         </div>
 
                         <div class="form-group col-sm-5">
@@ -71,8 +76,10 @@
                             </select>
                         </div>
                         <div class="form-group col-sm-2">
-                            <label for="inputCpf"> Preço </label>
-                            <input type="text" class="form-control" name="preco" id="inputPreco" placeholder="Preço" required>
+                            <fieldset disabled>
+                                <label for="inputCpf"> Preço </label>
+                                <input type="text" class="form-control" name="preco" id="inputPreco" placeholder="Preço" required>
+                            </fieldset>
                         </div>
                         <div class="form-group col-sm-2">
                             <label for="inputCpf"> Quantidade</label>

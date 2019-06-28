@@ -1,0 +1,49 @@
+.Titulo {
+    margin: 30px;
+    color: darkgreen;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #C2CCCA;
+}
+
+main {
+    border: 3px solid #4F4F49;
+    background-color: #FFFFFF;
+    margin: 30px;
+    padding: 20PX;
+}
+
+main h3 {
+    color: darkred;
+    font-family: 'Philosopher', sans-serif;
+}
+
+#vendedor {
+    font-size: 20px;
+    font-family: 'Philosopher', sans-serif;
+}
+
+.imagem {
+    font-size: 30px;
+    color: darkgoldenrod;
+}
+
+.imagem img {
+    width: 70px;
+}
+
+.centralizado {
+    display: flex;
+    justify-content: space-between;
+}
+
+#Identificacao {
+    font-size: 25px;
+}
+
+.testeTabela {
+    padding: 30px;
+    margin: 10px;
+}
