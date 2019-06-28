@@ -23,7 +23,14 @@ function BuscarProduto() {
 }
 
 function CadastrarPedido() {
-    document.getElementById("frame").src = " CadastrarPedido.php";
+    document.getElementById("frame").src = "CadastrarPedido.php";
+}
+
+function CadastrarFuncionario(){
+    document.getElementById("frame").src = "CadastrarFuncionario.php";
+}
+function BuscarFuncionario(){
+    document.getElementById("frame").src = "BuscarFuncionario.php";
 }
 
 
