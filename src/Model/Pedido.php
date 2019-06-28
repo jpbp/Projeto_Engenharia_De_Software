@@ -14,53 +14,53 @@
         $this->endereco=$enderecov;
         $this->cpfFun=$cpfFunv;
         $this->cpfCliente=$cpfClientev;
-        echo "deu bom";
+        
     }
-    public  getDataPedido() {
+    public function getDataPedido() {
 		return $this->dataPedido;
 	}
 
-	public  setDataPedido( dataPedido) {
+	public function  setDataPedido( $dataPedido) {
 		$this->dataPedido = dataPedido;
 	}
 
-	public  getNomeBruxo() {
+	public function  getNomeBruxo() {
 		return $this->nomeBruxo;
 	}
 
-	public  setNomeBruxo( nomeBruxo) {
+	public function  setNomeBruxo( $nomeBruxo) {
 		$this->nomeBruxo = nomeBruxo;
 	}
 
-	public  getNomeproduto() {
+	public function  getNomeproduto() {
 		return $this->nomeproduto;
 	}
 
-	public  setNomeproduto( nomeproduto) {
+	public function  setNomeproduto( $nomeproduto) {
 		$this->nomeproduto = nomeproduto;
 	}
 
-	public  getEndereco() {
+	public function  getEndereco() {
 		return $this->endereco;
 	}
 
-	public  setEndereco( endereco) {
+	public function  setEndereco( $endereco) {
 		$this->endereco = endereco;
 	}
 
-	public  getCpfFun() {
+	public function  getCpfFun() {
 		return $this->cpfFun;
 	}
 
-	public  setCpfFun( cpfFun) {
+	public function  setCpfFun( $cpfFun) {
 		$this->cpfFun = cpfFun;
 	}
 
-	public  getCpfCliente() {
+	public function  getCpfCliente() {
 		return $this->cpfCliente;
 	}
 
-	public  setCpfCliente( cpfCliente) {
+	public function  setCpfCliente( $cpfCliente) {
 		$this->cpfCliente = cpfCliente;
 	}
 

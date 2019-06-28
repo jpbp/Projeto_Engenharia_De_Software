@@ -60,6 +60,13 @@ class ProdutoDao{
                }
                return true;
         }
+
+        function getProduto($Produto,$link){
+            $query = "SELECT * FROM `produtos`  WHERE nome = '".$Produto->getNome()."'";
+            $r = mysqli_query($link, $query);
+            return $r;
+
+        }
         
     }
 
