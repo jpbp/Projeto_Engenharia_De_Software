@@ -9,3 +9,11 @@ main {
     margin: 60px;
     padding: 30PX;
 }
+
+.form-control {
+    border: 1px solid #FFA500;
+}
+
+.form-row #cpf {
+    margin-right: -300px;
+}
