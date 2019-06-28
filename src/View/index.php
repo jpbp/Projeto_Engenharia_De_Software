@@ -76,7 +76,7 @@
                     </ul>
 
                     <!-- Relatório-->
-                    <li>
+                    <li onclick="Relatorio()" class="button">
                         <a>
                             <i class="fas fa-chart-line fa-fw"></i> Relatório
                         </a>

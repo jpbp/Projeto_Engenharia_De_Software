@@ -67,7 +67,7 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                         <div class="form-group col-sm-6">
                             <label> Bruxo </label>
                             <select class="js-example-basic-single form-control" name="state">
-                                    <option value="AL">Alabama</option>
+                                    <option value="AL" data-cpf="">Alabama</option>
                                     <option value="WY">Wyoming</option>
                             </select>
                         </div>
@@ -84,7 +84,7 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                     <div class="form-row centralizado">
                         <div class="form-group col-sm-6">
                             <label> Artigos Mágicos </label>
-                            <select class="js-example-basic-single form-control" name="state">
+                            <select class="js-example-basic-single form-control" name="state" onchange="myFunction()">
                                         <option value="AL">Alabama</option>
                                         <option value="WY">Wyoming</option>
                             </select>
