@@ -1,0 +1,132 @@
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+/*Cor da barra lateral e do texto que está dentro*/
+
+.barra-lateral {
+    color: ivory;
+    background-color: #B22222;
+}
+
+body {
+    height: 100vh;
+}
+
+
+/*Definições da imagem*/
+
+img {
+    width: 25%;
+    margin: auto;
+    display: flex;
+}
+
+
+/*Definições do texto Loja Hogwarts*/
+
+.barra-lateral h3 {
+    text-align: center;
+    color: #FFD700;
+    margin: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/*Configurações do iframe(Local onde troca as telas)*/
+
+iframe {
+    height: 100vh;
+    width: 100%;
+}
+
+
+/*Tira o estilo da lista do menu*/
+
+#nav li {
+    list-style: none;
+}
+
+
+/*Configurações do menu*/
+
+.menuLink {
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0px;
+}
+
+#nav li a {
+    display: block;
+    text-decoration: none;
+}
+
+.menu-list li a i {
+    padding-left: 10px;
+    width: 2px;
+    padding-right: 20px;
+}
+
+
+/*Muda a cor da do texto assim que passa em cima*/
+
+#nav li a:hover,
+.menu-list ul .sub-menu li.active {
+    border-left: 4px solid #FFD700;
+    background: #363636;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.menu-list {
+    line-height: 35px;
+    cursor: pointer;
+}
+
+
+/* Limitação do espaçamento do submenu*/
+
+.menu-list .sub-menu {
+    line-height: 29px;
+    cursor: pointer;
+}
+
+
+/*Configurações da setinha que fica ao lado*/
+
+.menu-list li :not(collapsed) .arrow:before {
+    font-family: FontAwesome;
+    content: "\f078";
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    float: right;
+}
+
+
+/*Define a cor da borda no menu*/
+
+.menu-list li {
+    border-bottom: 1px solid #CD5C5C;
+}
+
+.menu-list ul .sub-menu li:hover {
+    background-color: #020203;
+}
+
+
+/*Cor do username*/
+
+#username {
+    color: darkgreen;
+}
+
+#username i {
+    color: darkgreen;
+}
