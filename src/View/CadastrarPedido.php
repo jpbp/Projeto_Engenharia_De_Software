@@ -69,7 +69,7 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                         <option>Produto</option>
             <?php 
                 while($row_resultado=mysqli_fetch_assoc($resultadoP)){?>
-                <option value= "<?php echo $row_resultado['idProduto'];?>"><?php echo $row_resultado['nome'];?>
+                <option value= "<?php echo $row_resultado['nome'];?>"><?php echo $row_resultado['nome'];?>
                 
                 </option><?php }?>
                         </select>
@@ -90,8 +90,8 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                 
                 <div class="form-row">
                         <div class="form-group col-sm-4">
-                            <label for="inputPreco"> preço </label>
-                            <input type="number" class="form-control"  name="preco" id="inputPreco"  required>
+                            <label for="inputPreco"> descrição </label>
+                            <input type="text" class="form-control"  name="descricao" id="descricao"  required>
                             <div class="invalid-feedback">
                                 Por Favor insira um Preco válido.
                             </div>

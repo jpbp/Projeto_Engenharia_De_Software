@@ -28,7 +28,7 @@
 			<!-- Código do input buscar-->
 			<form method="POST" action="../Controller/controller_BuscarCliente.php" class = "form-dark">
 				<div class="input-group mb-3 col-sm-6 barraPesquisa">
-					<input type="text" class="form-control " placeholder="Você jura solenemente não fazer nada de bom?" aria-label="Recipient's username" aria-describedby="button-addon2">
+					<input type="text" name="nome" class="form-control " placeholder="Você jura solenemente não fazer nada de bom?" aria-label="Recipient's username" aria-describedby="button-addon2">
 					<div class="input-group-append">
 						<button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
 					</div>
@@ -43,26 +43,25 @@
 				echo "nenhum usuario encontrado"; 
 			}
 			else{
-
-			echo $_SESSION['busca']; //retorna
-			unset($_SESSION['busca']);
+				echo $_SESSION['busca']; //retorna
+				
+				unset($_SESSION['busca']);
 			}
 		}
 	
 	
 	?>	
 	<?php
-	if(!empty($_SESSION['excluiu'])){
-		echo $_SESSION['excluiu'];
-		unset($_SESSION['excluiu']);
-	}
+		if(!empty($_SESSION['excluiu'])){
+			echo $_SESSION['excluiu'];
+			unset($_SESSION['excluiu']);
+		}
 	?>
 	<?php
-	if(!empty($_SESSION['alterado'])){
-		echo $_SESSION['alterado'];
-		unset($_SESSION['alterado']);
-	}
-
+		if(!empty($_SESSION['alterado'])){
+			echo $_SESSION['alterado'];
+			unset($_SESSION['alterado']);
+		}
 	?>
 </body>
 </html>
