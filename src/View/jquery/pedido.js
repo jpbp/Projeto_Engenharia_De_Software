@@ -7,7 +7,8 @@ $(document).ready(function() {
             $("#inputCep, #inputLogradouro,#inputNumero,#inputCidade,#inputEstado,#inputComplemento").attr({ readonly: false }); // Habilita a edição
         }
     });
-    $(".btnExcluir").click(function() {
-        $(this).parents('tr').remove();
+    $(".btnExcluir").click(function(e) {
+        e.preventDefault();
+        $(this).parent().parent().remove();
     });
 });
