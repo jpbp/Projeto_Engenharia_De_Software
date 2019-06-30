@@ -41,6 +41,7 @@ session_start();
 
 			echo $_SESSION['buscaProduto']; //retorna
 			unset($_SESSION['buscaProduto']);
+			
 			}
 		}
 	

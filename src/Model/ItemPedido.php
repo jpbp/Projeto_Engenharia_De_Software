@@ -4,36 +4,40 @@ class ItemPedido{
 private $idPedido;
 private $idProduto;
 private $qtde;
+private $nomeProduto;
+private $preco;
 
-    public function ItemPedido($idPedidov,$idProdutov,$qtdev){
+    public function ItemPedido($idPedidov,$idProdutov,$qtdev,$nome,$precov){
         $this->idPedido=$idPedidov;
         $this->idProduto=$idProdutov;
-        $this->qtd=$qtd;
+		$this->qtde=$qtdev;
+		$this->nomeProduto=$nome;
+		$this->preco=$precov;
     }
 
 	public function  getIdPedido() {
 		return $this->idPedido;
 	}
-
-	public function void setIdPedido( idPedido) {
-		$this->idPedido = idPedido;
+	public function  getNome() {
+		return $this->nomeProduto;
 	}
+	public function  getPreco() {
+		return $this->preco;
+	}
+
+	
 
 	public function  getIdProduto() {
 		return $this->idProduto;
 	}
 
-	public function void setIdProduto( idProduto) {
-		$this->idProduto = idProduto;
-	}
+	
 
 	public function  getQtde() {
 		return $this->qtde;
 	}
 
-	public function void setQtde( qtde) {
-		$this->qtde = qtde;
-	}
+	
 
 
 }

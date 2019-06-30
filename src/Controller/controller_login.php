@@ -24,6 +24,7 @@ if(mysqli_num_rows($consulta)==1){
     $_SESSION['usuario']=$row[11];
     $_SESSION['cpfUser']=$row[1];
     $verificaGerente=$Fdao->verificaGerente($row[1],$con->getLink());
+  
     if($verificaGerente){
       header('Location: ../View/indexFuncionario.php');
       exit();

@@ -7,12 +7,13 @@ class pedidoDao{
         if(empty($numPedido)){
             $numPedido=-1;
         }
-        $query = "SELECT * FROM `pedidos`  WHERE `idPedido` = ". $numPedido ." ";
-		$r = mysqli_query($link, $query);
+        $query = "SELECT * FROM `pedidos` as p , `item_pedido` as i WHERE p.idPedido = ". $numPedido ." AND   i.idPedido = ". $numPedido ."";
+        
+        $r = mysqli_query($link, $query);
         
 		if (!$r){
 			echo "Erro do banco de dados, não foi possível consultar o banco de dados\n";
-			echo 'Erro MySQL: ' . mysqli_error();
+
 				exit;
             }
 		return $r;
@@ -44,6 +45,19 @@ class pedidoDao{
                }
                return true;
     }
+    function cadastrarPedido($id,$data,$nomeBruxo,$log,$cidade,$com,$num,$estado,$cep,$cpfFun,$cpfCliente , $preTotal,$link){ //cadasrtar cliente no banco de dados
+        $query = "INSERT INTO `pedidos` VALUES ('%d', '%s', '%s', '%d', '%d', '%d', '%s','%s','%d','%s','%s','%d')";
+        $query = sprintf($query, $id,$data,$nomeBruxo,$cpfFun,$cpfCliente,$cep,$log,$cidade,$num,$estado,$com,$preTotal);
+       
+
+        if(!mysqli_query($link,$query)){
+            
+            die ("nao foi possivel excluir".mysqli_error($link));
+            
+        }
+         
+       
+   }
 
     
         

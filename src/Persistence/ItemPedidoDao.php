@@ -29,6 +29,19 @@ class ItemPedidoDao{
         }
     }
 
+        function adicionarItem($ItemPedido,$link){
+            $query="INSERT INTO `item_pedido` VALUES ('%d', '%d', '%d','%s','%d')";
+            $query = sprintf($query,$ItemPedido->getIdPedido(),$ItemPedido->getIdProduto(),$ItemPedido->getQtde(),$ItemPedido->getNome(),$ItemPedido->getPreco());
+         
+            if(!mysqli_query($link,$query)){
+                die ("nao foi possivel salvar".mysqli_error($link));
+               
+            }
+        
+          
+        
+    }
+
     
         
     }

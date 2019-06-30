@@ -7,7 +7,8 @@ include("../Persistence/ClienteDao.php");
 include("../Persistence/ProdutoDao.php");
 $c1= new Cliente("","","","","","","","","","","","");
 $p1= new Produto("","","","");
-
+$DtSaida=date('d/m/Y');
+$data_formatada = DateTime::createFromFormat('d/m/Y', $DtSaida);
 $con = new Conection("localhost","root","","lojahogwarts");
 $con->conectar();
 $cDAO = new ClienteDao();
@@ -50,19 +51,20 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
     <main class="principal">
         <div class="row justify-content-center mb-5">
             <div class="col-sm-12 col-md-10 col-lg-8">
-                <form method="POST" action="../Controller/controller_CadastrarPedido.php">
-                    <form> 
+                <form method="post" name="actionJava">
+                    
                     <!-- Número Pedido e Cpf -->
                     <div class="form-row centralizado">
                         <div class="form-group col-sm-3">
 
                             <label for="inputNome">Número Pedido</label>
-                            <input type="text" name="numero" class="form-control" id="inputNome" placeholder="Número" required>
+                            <input type="number" name="idPedido"   class="form-control" id="inputNome" placeholder="Número" >
 
                         </div>
                         <div class="form-group col-sm-5" id="cpf">
                             <label for="inputCpf"> Data </label>
-                            <input type="date" class="form-control"  name="data" id="inputdata" placeholder="data" required>
+                            
+                            <input type="date" class="form-control" maxlength="10" onkeypress="return dateMask(this, event);" id="saida" name="data" value="<?php echo $data_formatada->format('Y-m-d'); ?>"/>
                         </div>
                     </div>
                      <!-- Buscar Produto-->
@@ -75,65 +77,67 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                                 <option data-preco="0.0">Selecione</option>
                             <?php 
                                  while($row_resultado=mysqli_fetch_assoc($resultadoP)){?>
-                             <option value= "<?php echo $row_resultado['idProdutos'];?>" data-preco = "<?php echo $row_resultado['preco'];?>"><?php echo $row_resultado['nome'];?></option><?php }?>
+                             <option  value= "<?php echo $row_resultado['idProdutos'];?>"  data-preco = "<?php echo $row_resultado['preco'];?>"><?php echo $row_resultado['nome'];?></option><?php }?>
 
                       
                             </select>
                         </div>
                         <div class="form-group col-sm-3">
                             <label for="inputCpf"> Preço</label>
-                            <input type="text" class="form-control" name="preco" id="inputPreco" placeholder="Preco" value ="" required>
+                            <input type="text" class="form-control" name="preco" id="inputPreco" placeholder="Preco" value ="" >
                         </div>
                         
                         <div class="form-group col-sm-3">
                             <label for="inputQuantidade"> Quantidade</label>
-                            <input type="text" class="form-control" name="qtd" id="inputQuantidade" placeholder="Quantidade" required>
+                            <input type="text" class="form-control" name="qtd" id="inputQuantidade" placeholder="Quantidade" >
                         </div>
                     </div>
 
                     <!-- Botão Adicionar na tabela -->
                     <div class="form-row">
                         <div id="botao" class="col-sm-2">
-                            <button name ='btn' type="submit" class="btn btn-success" >Entrar</button>
-
+                            <button name ='btn' type="submit" class="btn btn-success" onClick="selecionaAction('../Controller/controller_CadastrarPedido');" >Entrar</button>    
                         </div>
                     </div>
-                    </form>
-                
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <?php
+                        if($_SESSION['t']!=""){
+                        $openTable="<table class='table table-hover'>
+                        <thead>
+                            <tr>
+                                <th>Nome Produto</th>
+                                <th>Quantidade</th> 
+                                <th>Preço unidade</th>
+                                <th>Preço total</th>
+                                
+                            </tr>
+                            </thead>";
                     
-                 <div class="form-row">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr class="bg-warning">
-                                    <th scope="col">#</th>
-                                    <th scope="col" >Artigo Mágico</th>
-                                    <th scope="col">Quantidade</th>
-                                    <th scope="col">Preço Unitário</th>
-                                    <th scope="col">Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>
-                                        <a href="#" class="btnExcluir"><i class="fas fa-times"></i></a>
-                                    </th>
-                                    <th>Vassouras</th>
-                                    <td>2</td>
-                                    <td>15.00</td>
-                                    <td>30.00</td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <a href="#" class="btnExcluir"><i class="fas fa-times"></i></a>
-                                    </th>
-                                    <th>Balinhas</th>
-                                    <td>2</td>
-                                    <td>15.00</td>
-                                    <td>30.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                            $closeTable ="</table>";
+
+                           echo $table = "<!DOCTYPE html>
+			<html lang=\"pt-br\">
+
+			<header>
+			<meta charset=\"utf-8\">
+			<title> Titulo </title>
+			<link href='../View/Bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+			</header>
+
+			<body>".$openTable.$_SESSION['t'].$closeTable.
+				
+
+			"</body>
+
+			</html>";
+        }
+        else{
+            echo "nada";
+        }
+                    ?>
+                
+                   
+                
                     <!-- Buscar Bruxo -->
                     <div class="form-row centralizado">
                         <div class="form-group col-sm-6">
@@ -154,12 +158,11 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                         <div class="form-group col-sm-5">
                             <fieldset disabled>
                                 <label for="inputCpf"> CPF </label>
-                                <input type="text"  value= <?php echo $_SESSION['cpfUser'];   ?> class="form-control" name="cpf" id="inputCpf" placeholder="CPF" required>
+                                <input type="text"  value= <?php echo $_SESSION['cpfUser'];   ?> class="form-control" name="cpf" id="inputCpf" placeholder="CPF" >
                             </fieldset>
                         </div>
                     </div>
-                    </form>
-                    <form> 
+                    
                     <!-- Radio Button-->
                     <div class="form-row btnRadio">
                         <div class="form-check col-sm-3">
@@ -225,13 +228,13 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
 
                         <div class="form-group col-sm-3">
                             <label for="inputPreco"> Preço Total</label>
-                            <input type="integer" class="form-control" name="precoTotal" id="inputPreco" placeholder="" >
+                            <input type="integer" class="form-control" value="<?php echo $_SESSION["precoTotal"] ?>" name="precoTotal" id="inputPreco" placeholder="" >
                         </div>
                     </div>
 
                         <div class="form-row">
                             <div id="botao1" class="col-sm-2">
-                                <button type="submit" class="btn btn-success">Cadastrar</button>
+                                <button name="btn1" type="submit" class="btn btn-success" onClick="selecionaAction('../Controller/controller_CadastrarPedidoProduto');"  >Cadastrar</button>
                             </div>
                         </div>
                     
@@ -261,6 +264,15 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
         var select = document.getElementById("combo-bruxos");
         var option = document.querySelector("#combo-bruxos>option[value='" + select.value + "'")
         document.getElementById("inputCpf").value = option.dataset.bruxo;
+    }
+
+    
+  
+</script>
+  <script>
+  function selecionaAction(script){
+        document.actionJava.action = script + '.php';
+        document.actionJava.submit();
     }
     </script>
 

@@ -1,6 +1,11 @@
 <?php
 	session_start(); // pega a seção para poder verificar se o usuario não esta autenticado
-	include("verificalogin.php");
+    include("verificalogin.php");
+    $_SESSION['t']="";
+    $_SESSION["precoTotal"]=0;
+    $_SESSION["array"]=[];
+    $_SESSION["qtd"]=[];
+    $_SESSION["preco"]=[];
 ?>	
 <!DOCTYPE html>
 <html>

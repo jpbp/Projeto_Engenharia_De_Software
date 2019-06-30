@@ -33,9 +33,13 @@ else{
 	$openTable="<table class='table table-hover'>
 	<thead>
 		<tr>
-			<th>Id produto</th>
-			<th>CPF funcionario</th> 
-			<th>cpf cliente</th>
+			<th> idPedido</th>
+			<th> idProduto</th>
+			<th>qtd</th> 
+			<th>cpfCliente</th>
+			<th>cpfGerente</th>
+			<th>Produto</th>
+			<th>preco</th>
 			<th>excluir</th>
 			<th>alterar</th>
 		</tr>
@@ -48,9 +52,13 @@ else{
 			$bodyTable = $bodyTable."
 			<tbody>
 			<tr>
-				<td>".$row[0]."</td>
-				<td>".$row[4]."</td> 
-				<td>".$row[5]."</td>
+				<td>".$row[12]."</td>
+				<td>".$row[13]."</td> 
+				<td>".$row[14]."</td>
+				<td>".$row[4]."</td>
+				<td>".$row[3]."</td>
+				<td>".$row[15]."</td>
+				<td>".$row[16]."</td>
 				<td> <a href="."../Controller/controller_ExcluirPedido.php?codigo=".$row[0].""."> <button > remover </button><a/> </td>
 				<td><a href="."../View/AlterarPedido.php?codigo=".$row[0].""."> <button > alterar </button><a/>   </td>
 			</tr>

@@ -2,9 +2,7 @@
  class Pedido{
     private $dataPedido;
     private $nomeBruxo;
-	private $nomeproduto;
 	private $logradouro;
-	private $bairro;
 	private $cidade;
 	private $complemento;
 	private $numero;
@@ -12,14 +10,14 @@
 	private $cep;
     private $cpfFuncionario;
 	private $cpfCliente;
+	private $preco;
 	
     
-    public function Pedido($datav,$nomeb,$nomep,$logradourov,$bairrov,$cidadev,$complementov,$numerov,$estadov,$cepv,$cpfFuncv,$cpfClientev){
+    public function Pedido($datav,$nomeb,$logradourov,$cidadev,$complementov,$numerov,$estadov,$cepv,$cpfFuncv,$cpfClientev,$precov){
         $this->dataPedido=$datav;
         $this->nomeBruxo=$nomeb;
-        $this->nomeProduto=$nomep;
+        
 		$this->logradouro=$logradourov;
-		$this->bairro=$bairrov;
 		$this->cidade=$cidadev;
 		$this->complemento=$complementov;
 		$this->numero=$numerov;
@@ -27,10 +25,14 @@
 		$this->cpfFuncionario=$cpfFuncv;
 		$this->cep=$cepv;
 		$this->cpfCliente=$cpfClientev;
+		$this->preco=$precov;
         
     }
     public function getDataPedido() {
 		return $this->dataPedido;
+	}
+	public function getPreco() {
+		return $this->preco;
 	}
 	public function getCep(){
 		return $this->cep;
@@ -58,36 +60,26 @@
 	}
 
 
-	public function  getNomeproduto() {
-		return $this->nomeproduto;
-	}
-
+	
 	
 
 	public function  getEndereco() {
 		return $this->endereco;
 	}
 
-	public function  setEndereco( $endereco) {
-		$this->endereco = endereco;
-	}
+	
 
 	public function  getCpfFun() {
 		return $this->cpfFun;
 	}
 
-	public function  setCpfFun( $cpfFun) {
-		$this->cpfFun = cpfFun;
-	}
+	
 
 	public function  getCpfCliente() {
 		return $this->cpfCliente;
 	}
 
-	public function  setCpfCliente( $cpfCliente) {
-		$this->cpfCliente = cpfCliente;
-	}
-
+	
     
 
 
