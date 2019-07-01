@@ -14,13 +14,13 @@ $con->conectar();
 $PedidoDAO = new PedidoDao();
 $aux=$PedidoDAO-> buscarPedido($id,$con->getLink());
 while($row = mysqli_fetch_row($aux)){
-    $cep=$row[6];
-    $logradouro=$row[7];
+    $cep=$row[5];
+    $logradouro=$row[6];
    
-    $cidade=$row[9];
-    $numero=$row[10];
-    $estado=$row[11];
-    $complemento=$row[12];
+    $cidade=$row[7];
+    $numero=$row[8];
+    $estado=$row[9];
+    $complemento=$row[10];
 }
 ?>
 
@@ -111,33 +111,7 @@ while($row = mysqli_fetch_row($aux)){
                         </div>
                     </div>
 
-                    <!-- Tabela-->
-                    <div class="form-row">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr class="bg-warning">
-                                    <th scope="col">Artigo Mágico</th>
-                                    <th scope="col">Quantidade</th>
-                                    <th scope="col">Preço Unitário</th>
-                                    <th scope="col">Preço Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>Vassouras</th>
-                                    <td>2</td>
-                                    <td>15.00</td>
-                                    <td>30.00</td>
-                                </tr>
-                                <tr>
-                                    <th>Balinhas</th>
-                                    <td>2</td>
-                                    <td>15.00</td>
-                                    <td>30.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    
 
                     <!-- Vendedor e Preço Total -->
                     <div class="form-row centralizado">

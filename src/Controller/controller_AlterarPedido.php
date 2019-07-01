@@ -12,7 +12,8 @@
     $numero=$_POST["numero"];
     $estado=$_POST["estado"];
     $complemento=$_POST["complemento"];
-    $pedido= new Pedido("","","",$logradouro,"",$cidade,$complemento,$numero,$estado,$cep,"","");
+    $preTotal=$_POST["precoTotal"];
+    $pedido= new Pedido("","",$logradouro,$cidade,$complemento,$numero,$estado,$cep,"","",$preTotal);
     $con = new Conection("localhost","root","","lojahogwarts");
     $con->conectar();
 

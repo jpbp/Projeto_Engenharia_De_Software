@@ -185,7 +185,7 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                             <div class="form-group col-sm-4">
 
                                 <label for="inputCep">Cep</label>
-                                <input type="text" name="cep" class="form-control" id="inputCep" placeholder="Cep" >
+                                <input type="number" name="cep" class="form-control" id="inputCep" placeholder="Cep" >
                             </div>
                         </div>
                         <div class="form-row">
@@ -195,7 +195,7 @@ $resultadoP =$pDAO->buscarProduto($p1,$con->getLink());
                             </div>
                             <div class="form-group col-sm-3">
                                 <label for="inputNumero"> Número </label>
-                                <input type="text" class="form-control" name="numero" id="inputNumero" placeholder="Número" >
+                                <input type="number" class="form-control" name="numero" id="inputNumero" placeholder="Número" >
                             </div>
                         </div>
 

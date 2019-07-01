@@ -37,7 +37,7 @@
 		if(!empty($_SESSION['pedido'])){ //se a buscaPedido não estiver vazia 
 
 			if($_SESSION['pedido']=='nada'){
-                echo "nenhum usuario encontrado";
+                echo "nenhum pedido encontrado";
             }
             else{
                 echo $_SESSION['pedido'];
