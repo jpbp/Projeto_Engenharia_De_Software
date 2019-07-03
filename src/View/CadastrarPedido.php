@@ -15,7 +15,14 @@ $cDAO = new ClienteDao();
 $pDAO = new ProdutoDao();
 $resultadoC =$cDAO->buscarCliente($c1,$con->getLink());
 $resultadoP =$pDAO->buscarProduto($p1,$con->getLink()); 
-
+if( !empty($_SESSION['c1Pedido'])){
+    echo $_SESSION['c1Pedido'];
+    unset( $_SESSION['c1Pedido']);
+}
+if( !empty($_SESSION['c2Pedido'])){
+    echo  $_SESSION['c2Pedido'];
+    unset( $_SESSION['c2Pedido']);
+}
 
 ?>
 

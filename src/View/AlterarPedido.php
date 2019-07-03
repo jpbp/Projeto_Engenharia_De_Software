@@ -3,25 +3,32 @@ session_start();
 include("../Model/Pedido.php");
 include("../Persistence/Conection.php");
 include("../Persistence/PedidoDao.php");
+include("../Persistence/ProdutoDao.php");
+include("../Model/Produto.php");
 
 $id = $_GET["codigo"];
 $_SESSION['id']=$id;
 
-
+$_SESSION['idP']=$_GET["prod"];
+$DtSaida=date('d/m/Y');
+$data_formatada = DateTime::createFromFormat('d/m/Y', $DtSaida);
 $con = new Conection("localhost","root","","lojahogwarts");
 $con->conectar();
-
+$p1= new Produto("","","","");
 $PedidoDAO = new PedidoDao();
+$pDAO = new ProdutoDao();
 $aux=$PedidoDAO-> buscarPedido($id,$con->getLink());
+$resultadoP =$pDAO->buscarProduto($p1,$con->getLink()); 
 while($row = mysqli_fetch_row($aux)){
     $cep=$row[5];
     $logradouro=$row[6];
-   
+    
     $cidade=$row[7];
     $numero=$row[8];
     $estado=$row[9];
     $complemento=$row[10];
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -60,54 +67,47 @@ while($row = mysqli_fetch_row($aux)){
                         <div class="form-group col-sm-3">
                             <fieldset disabled>
                                 <label for="inputNome">Número Pedido</label>
-                                <input type="text" name="numero" class="form-control" id="inputNome" placeholder="Número" required>
+                                <input type="text" value=<?php echo $id; ?> name="numero" class="form-control" id="inputNome" placeholder="Número" required>
                             </fieldset>
                         </div>
                         <div class="form-group col-sm-5" id="cpf">
-                            <fieldset disabled>
-                                <label for="inputCpf"> Data </label>
-                                <input type="date" class="form-control" name="cpf" id="inputCpf" placeholder="CPF" required>
-                            </fieldset>
-
+                            <label for="inputCpf"> Data </label>
+                            
+                            <input type="date" class="form-control" maxlength="10" onkeypress="return dateMask(this, event);" id="saida" name="data" value="<?php echo $data_formatada->format('Y-m-d'); ?>"/>
                         </div>
                     </div>
 
                     <!-- Buscar Bruxo -->
                     <div class="form-row centralizado">
-                        <div class="form-group col-sm-6">
-                        <fieldset disabled>
-                            <label> Bruxo </label>
-                            <input type="text" class="form-control" name="bruxo" id="inputBruxos" placeholder="Bruxo" required>
-                        </fieldset>
-                        </div>
+                       
 
-                        <div class="form-group col-sm-5">
-                            <fieldset disabled>
-                                <label for="inputCpf"> CPF </label>
-                                <input type="text" class="form-control" name="cpf" id="inputCpf" placeholder="CPF" required>
-                            </fieldset>
-                        </div>
+                        
                     </div>
 
                     <!-- Buscar Produto-->
                     <div class="form-row centralizado">
-                        <div class="form-group col-sm-6">
-                        <fieldset disabled>
+                    <div class="form-group col-sm-6">
                             <label> Artigos Mágicos </label>
-                            <input type="text" class="form-control" name="artigosMagicos" id="inputArtigosMagicos" placeholder="Artigos Mágicos" required>
-                        </fieldset>
+
+
+                            <select class="js-example-basic-single form-control" id="combo-produtos" name="produto" onchange = "myFunction()">
+                                <option data-preco="0.0">Selecione</option>
+                            <?php 
+                                 while($row_resultado=mysqli_fetch_assoc($resultadoP)){?>
+                             <option  value= "<?php echo $row_resultado['idProdutos'];?>"  data-preco = "<?php echo $row_resultado['preco'];?>"><?php echo $row_resultado['nome'];?></option><?php }?>
+
+                      
+                            </select>
                         </div>
                         <div class="form-group col-sm-3">
-                            <fieldset disabled>
-                                <label for="inputCpf"> Preço </label>
-                                <input type="text" class="form-control" name="preco" id="inputPreco" placeholder="Preço" required>
-                            </fieldset>
+                            <label for="inputCpf"> Preço</label>
+                            <input type="text" class="form-control" name="preco" id="inputPreco" placeholder="Preco" value ="" >
                         </div>
                         <div class="form-group col-sm-3">
-                            <fieldset disabled>
+                            
                             <label for="inputCpf"> Quantidade</label>
-                            <input type="text" class="form-control" name="preco" id="inputPreco" placeholder="Quantidade" required>
-                            </fieldset>
+                            <input type="text" class="form-control" name="qtd" id="inputPreco" placeholder="Quantidade" required>
+                            
                         </div>
                     </div>
 
@@ -115,19 +115,14 @@ while($row = mysqli_fetch_row($aux)){
 
                     <!-- Vendedor e Preço Total -->
                     <div class="form-row centralizado">
-                        <div class="form-group col-sm-4">
+                    <div class="form-group col-sm-4">
                             <fieldset disabled>
                                 <label for="disabledVendedor "> Vendedor </label>
-                                <input type="text" class="form-control" name="vendedor" id="disabledVendedor" placeholder="Vendedor" required>
+                                <input type="text" value="<?php echo $_SESSION["usuario"] ?>" class="form-control" name="vendedor" id="disabledVendedor" placeholder="Vendedor" >
                             </fieldset>
                         </div>
 
-                        <div class="form-group col-sm-2">
-                            <fieldset disabled>
-                            <label for="inputPreco"> Preço Total</label>
-                            <input type="integer" class="form-control" name="precoTotal" id="inputPreco" placeholder="" required>
-                            </fieldset>
-                        </div>
+                        
                     </div>
 
                     
@@ -188,5 +183,40 @@ while($row = mysqli_fetch_row($aux)){
 
     <!-- Jquery -->
     <script src="jquery/pedido.js"></script>
+
+     <!-- Icones decorativos-->
+     <script src="https://kit.fontawesome.com/63cd9f4730.js"></script>
+
+<!-- Select2-->
+<script src="jquery/jquery.min.js"></script>
+<script src="Select2/Select2.min.js"></script>
+
+<!-- Jquery -->
+<script src="jquery/pedido.js"></script>
+
+<script>
+function myFunction() {
+    var select = document.getElementById("combo-produtos");
+    var option = document.querySelector("#combo-produtos>option[value='" + select.value + "'")
+    document.getElementById("inputPreco").value = option.dataset.preco;
+}
+</script>
+<script>
+function myFunction1() {
+    var select = document.getElementById("combo-bruxos");
+    var option = document.querySelector("#combo-bruxos>option[value='" + select.value + "'")
+    document.getElementById("inputCpf").value = option.dataset.bruxo;
+}
+
+
+
+</script>
+<script>
+function selecionaAction(script){
+    document.actionJava.action = script + '.php';
+    document.actionJava.submit();
+}
+</script>
+
 
 </body>

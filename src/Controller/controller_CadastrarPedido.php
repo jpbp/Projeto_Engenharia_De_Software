@@ -52,6 +52,7 @@ else{
     array_push($_SESSION["qtd"],$qtd);
 	$_SESSION["precoTotal"]+=$pretotal;
     echo $_SESSION['t']=$_SESSION['t'].$bodyTable;
+    $_SESSION['c1Pedido']="<script>alert(' Produto Cadastrado com sucesso ao pedido!!');</script>";
     header('Location: ../View/CadastrarPedido.php'); //volta para pagina cadastro
     exit(); 
     

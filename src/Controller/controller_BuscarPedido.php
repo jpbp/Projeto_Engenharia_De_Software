@@ -59,8 +59,8 @@ else{
 				<td>".$row[3]."</td>
 				<td>".$row[15]."</td>
 				<td>".$row[16]."</td>
-				<td> <a href="."../Controller/controller_ExcluirPedido.php?codigo=".$row[0].""."> <button > remover </button><a/> </td>
-				<td><a href="."../View/AlterarPedido.php?codigo=".$row[0].""."> <button > alterar </button><a/>   </td>
+				<td> <a href="."../Controller/controller_ExcluirPedido.php?codigo=".$row[0]."&prod=".$row[13].""."> <button > remover </button><a/> </td>
+				<td><a href="."../View/AlterarPedido.php?codigo=".$row[0]."&prod=".$row[13].""."> <button > alterar </button><a/>   </td>
 			</tr>
 			</tbody>";
 			

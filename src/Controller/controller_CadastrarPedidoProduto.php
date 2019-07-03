@@ -70,6 +70,7 @@
     $_SESSION["array"]=[];
     $_SESSION["qtd"]=[];
     $_SESSION["preco"]=[];
+    $_SESSION['c2Pedido']="<script>alert(' Pedido Cadastrado com sucesso!!');</script>";
     header('Location: ../View/CadastrarPedido.php'); //volta para pagina cadastro
     exit(); 
 

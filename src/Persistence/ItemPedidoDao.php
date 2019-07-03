@@ -21,7 +21,7 @@ class ItemPedidoDao{
             $id=-1;
         }
         $query = "DELETE FROM `item_pedido` WHERE `idPedido` = ".$id."";
-        echo $query;
+        
         if(!mysqli_query($link,$query)){
             
             die ("nao foi possivel excluir".mysqli_error($link));
@@ -38,8 +38,17 @@ class ItemPedidoDao{
                
             }
         
-          
-        
+    }
+
+    function alterarItemPedido($ItemPedido,$link,$id){ //alterar cliente 
+        $query="UPDATE `item_pedido` SET `idProduto`=%d,`preco` = %d,`nomeProduto`= '%s', `qtde`=%d WHERE `idProduto` = ".$id."";
+        $query = sprintf($query,$ItemPedido->getIdProduto(),$ItemPedido->getPreco(),$ItemPedido->getNome(),$ItemPedido->getQtde());
+    
+           if(!mysqli_query($link,$query)){
+               
+               return false;
+           }
+           return true;
     }
 
     

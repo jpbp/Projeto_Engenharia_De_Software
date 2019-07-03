@@ -7,6 +7,7 @@ include("../Persistence/Conection.php");
 
 //pegando o id pelo href
 $id = $_GET["codigo"];
+$idP=$_GET["idP"];
 
 
 
